@@ -1,0 +1,273 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Century Gothic, Arial;
+}
+
+html, body {
+	width: 100%;
+	height: 99.19%;
+	background-color: rgb(193, 240, 240);
+}
+
+main {
+	width: 100%;
+	height: 94.2%;
+}
+
+.campoCodigo{
+	width: 10%;
+	background-color: #4682B4;
+}
+
+
+.campoCodigoBaixo{
+	width: 10%;
+	background-color: #ADD8E6;
+}
+
+.outrosCampos{
+	background-color: #4682B4;
+}
+
+.outrasClasses{
+	background-color: #ADD8E6;	
+	}
+
+
+#logo {
+		margin: -13px -86px 0px 73.6px;
+		float: left;
+		width: 80px;
+		height: 80px;	
+	}
+
+#cabecalho {
+	margin-top: 10px;
+	height: 8.2%;
+	width: 100%;
+	background-color: black;
+}
+
+	#menuPrincipal li, #menuPrincipal a{
+		margin-top: 1.9px;
+	}
+	
+	#menuPrincipal .botaoClique {
+		float: left;
+		line-height: 45px;
+		margin-top: 1px;
+	}
+		
+	#menuPrincipal  p {
+		text-align: center;
+		color: white;
+	}
+	
+		#campoNome {
+			margin-left: 28%;
+		}
+		
+		#nome {
+			float: right;
+			line-height: 45px;
+			margin-top: 1px;
+			font-size: 14px;
+		}
+	
+		#botaoSair {
+			float: right;
+			width: 27px;
+			height: 27px;
+			margin: 11.5px 25px 0px 0px ;
+		}
+		
+	#menuPrincipal li {
+		display: inline-block;
+		width: 160px;
+	}
+
+	.submenu a {
+		color: white;
+		background-color: #000;
+		width: 91px;
+	}
+	
+	#menuPrincipal a:hover {
+		background-color:#333333;
+		height: 49.4px;
+	}
+
+
+	
+	
+	
+	
+
+.fieldset{
+	margin-top: 30px;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 30px;
+}
+
+.legend{
+	margin-left: 100px;
+	margin-bottom: 20px;
+	color: rgb(137, 103, 146);
+	font-size: 30px;
+}
+
+.palavras{
+	font-size: 18px;
+	margin-left: 20px;
+	color: black;
+	width:25%;
+	float:left;
+	margin-right: -50px;
+}
+
+.campoTexto{
+	width: 326.4px;
+	height: 25px;
+	margin-bottom: 20px;
+}
+
+#tituloPag{
+	font-size: 35px;
+	text-align: center;
+}
+
+#nomeCliente{
+	font-size: 18px;
+	margin-left: 20px;
+	color: black;
+	width:14%;
+	float: left;
+	margin-top: 3px;
+}
+
+#campoNomeCliente {
+	float: left;
+}
+
+#divEsquerda{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+#divDireita{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+button{
+	cursor: pointer;
+}
+
+#botaoLimpar {
+    border: none;
+    background-color: #80b3ff;
+    margin-top: -15px;
+    margin-left: 147px;
+    width: 130px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+
+#botaoCadastrar {
+    border: none;
+    background-color: #0066ff;
+    margin-left: 45px;
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+
+
+/* editaClienteForm.php */
+
+#botaoRestaurar {
+    border: none;
+    background-color: #80b3ff;
+    margin-top: -15px;
+    margin-left: 150px;
+    width: 130px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+
+#botaoEditar {
+    border: none;
+    background-color: #0066ff;
+    margin-left: 45px;
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+
+
+#imgLupa{
+	width: 30px;
+	height: 30px;
+}
+
+#imgLapis{
+	width: 30px;
+	height: 30px;	
+}
+
+#imgLixeira{
+	width: 30px;
+	height: 30px;
+}
+
+#botaoLupa{
+	border:none;
+	background-color:transparent;
+
+	margin-left: 10px;
+}
+
+#botaoLapis{
+	float: left;
+	vertical-align: center;
+	margin-left: 24%;
+	border:none;
+	background-color:transparent;
+	
+}
+
+#botaoLixeira{
+	margin-right: 20%;
+	border:none;
+	background-color:transparent;
+  
+}
+
+
+table, th, td{
+	border-collapse: collapse;
+	border: 3px solid  rgb(193, 240, 240);
+	margin-bottom: 30px;
+}
+
+table{
+	margin-left: 5%;
+	width: 90%;
+	text-align: center;
+}
+
+th{
+	height: 40px;
+}
+
+td{
+	height: 40px;
+}

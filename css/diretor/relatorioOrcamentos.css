@@ -1,0 +1,361 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Century Gothic, Arial;
+}
+
+html,
+body {
+    width: 100%;
+    height: 99%;
+    background-color: rgb(193, 240, 240);
+}
+
+.linhaCabecalho {
+    background-color: #4682B4;
+    font-weight: bold;
+}
+
+.campoCodigo {
+    /*depende do .linhaProdutos*/
+    width: 25%;
+}
+
+.linhaCliente {
+    width: 30%;
+}
+
+
+
+.linhasTituloSuperior {
+    width: 10%;
+}
+
+.linhaStatusEstatica {
+    width: 5%;
+    background-color: #ADD8E6;
+    font-weight: bold;
+}
+
+.linhaStatus {
+    width: 25%;
+    background-color: #ADD8E6;
+}
+
+.linha1 {
+    background-color: #4682B4;
+}
+
+.tabela2 {
+    margin-top: -30px;
+    background-color: #ADD8E6;
+}
+
+.linhaProdutosEstatica {
+    width: 25%;
+    background-color: #ADD8E6;
+    font-weight: bold;
+}
+
+.linhaProdutos {
+    width: 25%;
+    background-color: #ADD8E6;
+}
+
+.linhaDescEstatica {
+    width: 40%;
+    text-align: left;
+    background-color: #ADD8E6;
+    font-weight: bold;
+}
+
+.linhaDesc {
+    width: 40%;
+    text-align: left;
+    background-color: #ADD8E6;
+}
+
+.colunaDescri {
+    text-align: left;
+    background-color: #ADD8E6;
+}
+
+.linhaPrecoEstatico {
+    width: 8%;
+    background-color: #ADD8E6;
+    font-weight: bold;
+}
+
+.linhaPreco {
+    width: 15%;
+    background-color: #ADD8E6;
+}
+
+.linhaQtdeEstatica {
+    width: 15%;
+    background-color: #ADD8E6;
+    font-weight: bold;
+}
+
+.linhaQtde {
+    width: 15%;
+    background-color: #ADD8E6;
+}
+
+.camposDireita {
+    background-color: #ADD8E6;
+}
+
+#cabecalho {
+    margin-top: 10px;
+    height: 8.2%;
+    width: 100%;
+    background-color: black;
+}
+
+#logo {
+    margin: -13px -86px 0px 73.6px;
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+#listaLogo {
+    margin-right: 68px;
+}
+
+#menuPrincipal li {
+    margin-top: 1.9px;
+}
+
+#menuPrincipal a {
+    text-decoration: none;
+    list-style: none;
+}
+
+#menuPrincipal .botaoClique {
+    float: left;
+    line-height: 45px;
+    margin-top: 1px;
+}
+
+#menuPrincipal p {
+    text-align: center;
+    color: white;
+}
+
+#campoNome {
+    float: right;
+}
+
+#nome {
+    line-height: 45px;
+    font-size: 14px;
+    margin-left: -205px;
+}
+
+#botaoSair {
+    float: right;
+    width: 27px;
+    height: 27px;
+    margin: 11.5px 25px 0px 0px;
+    margin-right: -135px;
+}
+
+#menuPrincipal li {
+    display: block;
+    width: 160px;
+}
+
+.submenu a {
+    color: white;
+    background-color: #000;
+    width: 160px;
+}
+
+#menuPrincipal a:hover {
+    background-color: #333333;
+    height: 49px;
+}
+
+.dropdown {
+    margin-top: 2px;
+    width: 160px;
+}
+
+#menuPrincipal .menuDesce {
+    float: left;
+    margin-top: -1px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    width: 160px;
+    background-color: black;
+}
+
+#submenu1 {
+    height: 200px;
+}
+
+#submenu2 {
+    height: 100px;
+}
+
+#menuPrincipal li:hover>.submenu {
+    display: block;
+    top: 59.4px;
+    width: 160px;
+}
+
+.submenu a {
+    height: 49px;
+}
+
+#funcionario {
+    display: block;
+}
+
+main {
+    width: 100%;
+    height: 95%;
+}
+
+#head {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.fieldsets {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}
+
+#tabelaRegistroOrdens {
+    margin-bottom: 30px;
+    margin-left: 418px;
+}
+
+.legends {
+    margin-left: 100px;
+    color: rgb(137, 103, 146);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#listaCliente {
+    width: 305px;
+    height: 28px;
+    margin-bottom: 20px;
+}
+
+#direita {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+#esquerda {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.palavras {
+    font-size: 18px;
+    margin-left: 20px;
+    color: black;
+    width: 25%;
+    float: left;
+    margin-right: 0px;
+}
+
+.cliente {
+    width: 305px;
+    height: 28px;
+    margin-bottom: 20px;
+}
+
+#cliente {
+    width: 300px;
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+.dataInicial {
+    width: 155px;
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+.dataFinal {
+    width: 155px;
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+.funcionario {
+    width: 300px;
+    height: 25px;
+}
+
+.status {
+    width: 305px;
+    height: 28px;
+    margin-bottom: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#botaoFiltrar {
+    border: none;
+    background-color: transparent;
+    color: white;
+    height: 35px;
+    font-size: 20px;
+    background-color: #0066ff;
+    width: 200px;
+    margin-top: 2%;
+    margin-left: 37%;
+    margin-bottom: 2%;
+}
+
+#botaoPdf {
+    /*	display: none;*/
+    border: none;
+    background-color: transparent;
+    color: white;
+    height: 35px;
+    font-size: 20px;
+    background-color: #0066ff;
+    width: 200px;
+    margin-left: 5.1%;
+    margin-bottom: 2%;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 3px solid rgb(193, 240, 240);
+    margin-bottom: 30px;
+}
+
+table {
+    margin-left: 5%;
+    width: 90%;
+    text-align: center;
+}
+
+th {
+    height: 40px;
+}
+
+td {
+    height: 40px;
+}

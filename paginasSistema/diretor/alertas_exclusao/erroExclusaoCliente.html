@@ -1,0 +1,39 @@
+﻿<style>
+	#alerta{
+		width:280px;
+		height:40px;
+		background-color:#FF7256;
+		border: 1px solid black;
+		font-family: Century Gothic;
+		font-size: 15px;
+		font-weight:bold;
+		margin-left: 92px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	#botaoAlerta{
+		float:right;
+		background-color:transparent;
+		border-left: 1px solid black;
+		border-bottom: 1px solid black;
+		border-top: none;
+		border-right: none;
+		font-weight: bold;
+		
+	}
+</style>
+
+<script>
+function fecharAlerta(){
+	var alerta=document.getElementById("exibeAlerta");
+	alerta.parentNode.removeChild(alerta);
+}
+</script>
+
+<div id="exibeAlerta">
+	<div id="alerta">
+	Não foi possível excluir <button type="button" id="botaoAlerta" onclick="fecharAlerta()"> X </button>  <br>	
+	O cliente está ligado a um orçamento
+	
+</div>
+</div>

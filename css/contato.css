@@ -1,0 +1,177 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Century Gothic, Arial;
+}
+
+html, body {
+	width: 100%;
+	height: 97%;
+	background-color: rgb(193, 240, 240);
+}
+
+#logo {
+		margin: -12px 20px 0px 73.8px;
+		float: left;
+		width: 80px;
+		height: 80px;
+		
+	}
+	
+.menu ul li{
+	background-color: black;
+	color: white;
+	float: left;
+	width: 227.6px;
+	height: 50px;
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+	margin-top:-20px;
+	margin-bottom: 20px;	
+}
+
+.menu ul ul li{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.menu ul li:hover{
+	background-color:#333333;
+}
+
+.menu ul{
+	padding: 0;
+}
+
+.menu ul ul{
+	display: none;
+}
+
+.menu ul li:hover > ul{
+	display: block;
+}
+
+.menu a{
+	text-decoration: none;
+	color: white;
+}
+
+main {
+	width: 100%;
+	height: 94.2%;
+}
+	
+	#enderecoDiv{
+		float:right;
+		width:40%;
+		margin-top: -60px;
+		
+	}	
+	
+
+			
+			
+			
+			#tituloLocalizacao{
+			font-family: Century Gothic, Arial;
+			margin-top:-370px;
+			font-weight:bold;	
+			margin-left:-70px;
+			font-style: normal;
+			float: left;
+			}
+			
+			#textoEndereco{
+			margin-top:-350px;
+			margin-bottom: 15px;
+			margin-left:-70px;
+			font-family: Century Gothic, Arial;	
+			
+			font-style: normal;		
+			
+			}
+			#tituloAtendimento{
+			font-family: Century Gothic, Arial;	
+			font-weight:bold;	
+			margin-left:-70px;	
+			
+			font-style: normal;
+			
+			}
+			#textoAtendimento{
+			font-family: Century Gothic, Arial;		
+			margin-left:-70px;	
+			font-style: normal;
+			}
+	}
+	#divFormContatoEsquerda{
+		height:60%;
+		width:50%;
+		margin-left:-100px;
+		float:left;
+		background-color:rgb(193, 240, 240); 
+		
+	}
+	
+	#mapa{
+		margin-left: -65px;
+		
+	}
+	
+			#tituloMensagem{
+				margin-left:157px;
+				margin-top:30px;
+				font-family: Century Gothic, Arial;
+				color: rgb(137, 103, 146);
+				font-size: 30px;
+			}
+			#formContato{
+				margin-left:300px;
+				margin-top: 30px;
+				font-size:15px;
+				margin-left:100px;
+			}
+			.campos{
+				font-size: 20px;
+				color: black;
+			}
+			.camposForm{
+				width:35%;
+				padding:5px;
+				height: 15px;
+				margin-bottom: 5px;
+			}
+			#motivoContato{
+			color: black;
+			width:36.2%;
+			height: 30px;
+			padding:5px;
+			margin-bottom: 9px;
+			}
+			
+			#mensagem{
+				height:70px;
+				width:35%;
+			}
+			.botoes{
+				border:none;
+				background-color:transparent;
+				margin-top: 10px;
+				margin-right:153px;
+			}
+	
+	
+#rodape {
+	background-color: black;
+	width: 100%;
+	height: 7%;
+}
+
+	#copyright  {
+		color: white;
+		font-family: Courier New, Arial;
+		font-size: 18px;
+		padding-top: 11px;
+		text-align: right;
+	}

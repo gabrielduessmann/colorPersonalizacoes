@@ -1,0 +1,40 @@
+﻿<style>
+	#alerta{
+		margin-top: 10px;
+		width:180px;
+		height:40px;
+		background-color:#43CD80;
+		border: 1px solid black;
+		font-family: Century Gothic;
+		font-size: 15px;
+		font-weight:bold;
+		margin-left: 92px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	#botaoAlerta{
+		float:right;
+		background-color:transparent;
+		border-bottom: 1px solid black;
+		border-left: 1px solid black;
+		border-right: none;
+		border-top: none;
+		font-weight: bold;
+	}
+</style>
+
+<script>
+function fecharAlerta(){
+	var alerta=document.getElementById("exibeAlerta");
+	alerta.parentNode.removeChild(alerta);
+}
+</script>
+<div id="exibeAlerta">
+	<div id="alerta">
+	<button type="button" id="botaoAlerta" onclick="fecharAlerta()">X</button>
+	Excluído com sucesso  
+	
+
+		
+</div>
+</div>

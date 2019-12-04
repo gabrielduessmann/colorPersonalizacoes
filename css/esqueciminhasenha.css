@@ -1,0 +1,120 @@
+﻿* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Century Gothic, Arial;
+}
+
+html, body {
+	width: 100%;
+	height: 99.4%;
+	background-color: rgb(193, 240, 240);
+}
+
+#logo {
+		margin: -12px 20px 0px 73.8px;
+		float: left;
+		width: 80px;
+		height: 80px;
+	}
+
+.menu ul li{
+	background-color: black;
+	color: white;
+	float: left;
+	width: 227.6px;
+	height: 50px;
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+	margin-top:10px;
+	margin-bottom: 120px;	
+}
+
+.menu ul ul li{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.menu ul li:hover{
+	background-color:#333333;
+}
+
+.menu ul{
+	padding: 0;
+}
+
+.menu ul ul{
+	display: none;
+}
+
+.menu ul li:hover > ul{
+	display: block;
+}
+
+.menu a{
+	text-decoration: none;
+	color: white;
+}
+
+main {
+	width: 100%;
+	height: 94.2%;
+}
+	
+#rodape {
+	background-color: black;
+	width: 100%;
+	height: 7%;
+}
+
+	#copyright  {
+		color: white;
+		font-family: Courier New, Arial;
+		text-align: center;
+		font-size: 18px;
+		padding-top: 11px;
+	}
+	
+.inputs{
+	width: 400px;
+	height:25px;
+}
+
+#esqueciSenha {
+	padding-top: 10.5%;
+	text-align:center;
+	
+}
+
+.labels{
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+#label1{
+	margin-right: 234px;
+}
+
+#label2{
+	margin-right: 366px;
+}
+
+#label3{
+	margin-right: 342px;
+}
+
+.botoes{
+	border: none;
+	background-color: transparent;
+	margin-left: 103px;
+}
+
+#botao{
+	margin-left: 481px;
+	padding-top: 10px;
+}
+
+#linkEsqueciSenha{
+	margin-left: 143px;
+	color: gray;	
+}

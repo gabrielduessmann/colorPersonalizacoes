@@ -1,0 +1,225 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Century Gothic, Arial;
+}
+
+html, body {
+	height: 98%;
+	width: 100%;
+	background-color: rgb(193, 240, 240);
+}
+
+#logo {
+		margin: -13px -86px 0px 73.6px;
+		float: left;
+		width: 80px;
+		height: 80px;
+	}
+
+
+#cabecalho {
+	margin-top: 10px;
+	height: 8.3%;
+	width: 100%;
+	background-color: black;
+}
+
+.imgLapis{
+width: 25px;
+height: 25px;
+background-color:transparent;
+
+}
+	#menuPrincipal li, #menuPrincipal a{
+		margin-top: 1.9px;
+	}
+
+
+	#menuPrincipal .botaoClique {
+		float: left;
+		line-height: 45px;
+		margin-top: 1px;
+	}
+
+	#menuPrincipal  p {
+		text-align: center;
+		color: white;
+	}
+
+		#campoNome {
+			margin-left: 51.42%;
+		}
+
+		#nome {
+			float: right;
+			line-height: 45px;
+			margin-top: 1px;
+			font-size: 14px;
+		}
+
+		#botaoSair {
+			float: right;
+			width: 27px;
+			height: 27px;
+			margin: 11.5px 25px 0px 0px ;
+		}
+
+	#menuPrincipal li {
+		display: inline-block;
+		width: 160px;
+	}
+
+
+	.submenu a {
+		color: white;
+		background-color: #000;
+		width: 91px;
+	}
+
+	#menuPrincipal a:hover {
+		background-color:#333333;
+		height: 49.4px;
+	}
+
+
+main {
+	width: 100%;
+	height: 93.2%;
+}
+
+
+
+.fieldset{
+	margin-top: 30px;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 30px;
+}
+
+.legend{
+	margin-left: 100px;
+	color: rgb(137, 103, 146);
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+
+
+
+
+#conteudoPrincipal{
+	height: 100%;
+	width: 100%;
+}
+
+#tituloPag{
+	font-size: 35px;
+	text-align: center;
+}
+
+
+h2 {
+	color: #4682B4;
+	text-align: center;
+	margin-bottom: 2%;
+}
+
+
+
+#imgLapsi{
+	background-color: transparent;
+	border: none;
+	float: right;
+	vertical-align: center;
+	margin-right: 5%;
+	
+}
+
+div {
+	width: 46%;
+}
+
+#aberto {
+	float: left;
+	margin-left: 20px;
+}
+
+#fazendo {
+	float: right;
+	margin-right: 20px;
+}
+
+button{
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	float: left;
+	vertical-align: middle;
+}
+
+	.imgVisualizar {
+		width: 50px;
+		height: 30px;
+		margin-right: 2px;
+		margin-left: 1px;
+		margin-top: 4px;
+	}
+
+	#imgCustomizar {
+		width: 35px;
+		height: 35px;
+		margin-right: 6px;
+		margin-top: 2px;
+	}
+
+	#imgFinalizar {
+		width: 35px;
+		height: 35px;
+		margin-right: 6px;
+		margin-top: 2px;
+	}
+
+	#imgRejeitar {
+		width: 31px;
+		height: 31px;
+		margin-top: 4px;
+	}
+
+
+table, th, td{
+	border-collapse: collapse;
+	border: 3px solid rgb(193, 240, 240);
+	margin-bottom: 30px;
+	background-color: #4682B4;
+	}
+
+	table{
+		width: 100%;
+		text-align: center;
+	}
+
+	th{
+		height: 50px;
+		}
+		
+		td{
+		height: 50px;
+		background-color: #ADD8E6;	
+		}
+
+			.dataEntregaPassou {
+				background-color: #ff4d4d;
+			}
+
+			.dataEntregaHoje {
+				background-color: #ffff33;
+			}
+
+		.produtos {
+			width: 14%;
+		}
+
+		.entrega {
+			width: 17%; 
+		}
+
