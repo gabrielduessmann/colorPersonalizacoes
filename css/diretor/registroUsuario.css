@@ -173,70 +173,7 @@
         font-size: 20px;
         margin-bottom: 20px;
     }
-    /* #nomecompleto {
-    margin-right: -40px;
-}
 
-#email {
-    margin-left: 100px;
-}
-
-#telefone {
-    margin-left: 72px;
-}
-
-#celular {
-    margin-left: 97px;
-}
-
-#senha {
-    margin-left: 91px;
-}
-
-#usuario {
-    margin-left: 84px;
-}
-
-#rua {
-    margin-left: 58px;
-}
-
-#numero {
-    margin-left: 10px;
-}
-
-#cidade {
-    margin-left: 25px;
-}
-
-#cpf {
-    margin-left: 113px;
-}
-
-#cep {
-    margin-left: 45px;
-}
-
-#bairro {
-    margin-left: 42px;
-}
-
-#estado {
-    margin-left: 32px;
-}
-
-#permissao {
-    margin-left: 58px;
-} */
-    
-    .palavras {
-        font-size: 18px;
-        margin-left: 20px;
-        color: black;
-        width: 25%;
-        float: left;
-        background-color: red;
-    }
     
     .ladoEsquerdo {
         margin-left: 20px;

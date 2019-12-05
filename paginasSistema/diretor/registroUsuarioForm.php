@@ -116,7 +116,7 @@
 				<label for="rua" class="ladoEsquerdo">Rua *</label>
 				<input type="text" placeholder="Digite aqui sua rua" name="rua" class="input"  id="rua">
 
-<br><br>
+<br><br>	
 
 				<label for="numero" class="ladoEsquerdo">Número *</label>
 				<input type="text" placeholder="Digite aqui o número" onkeyup="somenteNumeros(this);" name="numero" class="input" id="numero" maxlength="4">
@@ -176,12 +176,10 @@
 
 <br><br>
 					<button type = "reset" class="botao" id="botaoLimpar">
-						<!-- <img src = "../../img/limpar.png" alt="Botão limpar campos">  -->
 						Limpar
 				</button>
 
 					<button type = "submit" class="botao" id="botaoCadastrar">
-						<!-- <img src = "../../img/registrar.png" alt="Botao cadastrar">  -->
 						Cadastrar
 					</button>
 				</div>
