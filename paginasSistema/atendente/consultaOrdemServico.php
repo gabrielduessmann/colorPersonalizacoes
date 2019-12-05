@@ -15,26 +15,30 @@ session_start();
 <html lang="pt-br">
 
 <head>
-  <title> Customizador - Ordem de Serviço </title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/atendente/consultaOrdemServico.css">
-  <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
-  <script src="../../js/customizador/editaOrdemServico.js"></script>
+	<title> Atendente - Ordem de Serviço </title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../../css/atendente/consultaOrdemServico.css">
+	<link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
+	<script src="../../js/customizador/editaOrdemServico.js"></script>
 </head>
 
 <body>
 		
 	<main id = "conteudoPrincipal">
 	
-	<?php
+<?php
+
+	// calcula valor total da ordem de serviço
 
 function calculaValorTotal($codigo, $conexao){
+
+	//verificar se teve desconto no orçamento
 	$comando = "SELECT desconto FROM orcamentos WHERE codigo=".$codigo;
 	$resultado = mysqli_query($conexao, $comando);
 	$resultado = mysqli_fetch_assoc($resultado);
 	$desconto = $resultado['desconto'];
 	$desconto = intval($desconto);
-	// var_dump($desconto);
+	
 
 	if ($desconto == "undefined" || $desconto == "" || $desconto == 0) {
 		$desconto = 1;
@@ -42,7 +46,10 @@ function calculaValorTotal($codigo, $conexao){
 		$desconto = intval($desconto);
 		$desconto = 1-($desconto/100);
 	}
-	// echo $desconto;
+	
+
+// multiplica o preco atual pela quantidade do produto e faz a soma de todos os preços daquele orçamento
+	
 	$sql="SELECT SUM(orcamentos_has_produtos.quantidade*orcamentos_has_produtos.precoatual) 
 	as valorTotal 
 	FROM orcamentos INNER JOIN orcamentos_has_produtos ON 
@@ -50,103 +57,49 @@ function calculaValorTotal($codigo, $conexao){
 	// echo $sql;
 	$resultadoValor=mysqli_query($conexao,$sql);
 	$valorTotal=mysqli_fetch_assoc($resultadoValor);
-	return $valorTotal['valorTotal']*$desconto;
+	return $valorTotal['valorTotal']*$desconto; // retonar o valor total com o desconto
 }
 
 ?>
 	
 	<?php include("menuAtendente.php") ?>
-
 	<br>
+
+	<!-- Mostra todas as ordens de serviço -->
+
 	<h1 id = "tituloPag">Ordem de Serviço </h1>
+	
 	
 	<fieldset class="fieldsets">
 
-<legend class="legends">Consulta de Ordens de Serviço</legend>
+	<legend class="legends">Consulta de Ordens de Serviço</legend>
 
+		<form action="#" method="GET" id="formConsultaOrdens">
 
+			<label for="buscaCliente" id="palavraBusca">Nome do Cliente</label>
+			<input type="text" name="buscaCliente" class="camposTexto" id="buscaCliente" placeholder = "Insira o nome do cliente aqui">
 
-
-<form action="#" method="GET" id="formConsultaOrdens">
-
-<label for="buscaCliente" id="palavraBusca">Nome do Cliente</label>
-<input type="text" name="buscaCliente" class="camposTexto" id="buscaCliente" placeholder = "Insira o nome do cliente aqui">
-
-<button type="submit" class="consulta" id="botaoLupa"><img src="../../img/lupa.png" alt="botão pesquisar" id="imgLupa"></button>
-</form>
+			<button type="submit" class="consulta" id="botaoLupa">
+				<img src="../../img/lupa.png" alt="botão pesquisar" id="imgLupa">
+			</button>
+		
+		</form>
 
 
 <?php
 
 	require_once("../conexaoBanco.php");
 
-if (isset($_GET['buscaCliente']) && $_GET['buscaCliente']=="") {		
+if (isset($_GET['buscaCliente']) && $_GET['buscaCliente']=="") { 	
 
 	
-$comando = "SELECT 
-ordensservicos.codigo, dataentrega, ordensservicos.orcamentos_codigo,  ordensservicos.status, ordensservicos.usuarios_id,
-desconto,
-precoatual, quantidade, 
-clientes.nome AS nomeCliente,	
-usuarios.nome AS nomeUsuario
-FROM 
-	orcamentos
-INNER JOIN 
-	ordensservicos	
-ON
-	ordensservicos.orcamentos_codigo=orcamentos.codigo
-INNER JOIN	
-	clientes
-ON 
-	orcamentos.clientes_id=id	
-INNER JOIN
-	orcamentos_has_produtos
-ON
-	orcamentos.codigo=orcamentos_has_produtos.orcamentos_codigo
-INNER JOIN
-	usuarios
-ON
-	ordensservicos.usuarios_id=usuarios.id 
-GROUP BY 
-	orcamentos.codigo
-
-		";
-}
-else if (isset($_GET['buscaCliente'])==false){
-$comando = "SELECT 
-	ordensservicos.codigo, dataentrega, ordensservicos.orcamentos_codigo,  ordensservicos.status, ordensservicos.usuarios_id,
-	desconto,
-	precoatual, quantidade, 
-	clientes.nome AS nomeCliente,	
-	usuarios.nome AS nomeUsuario
-	FROM  
-		orcamentos
-	INNER JOIN 
-		ordensservicos	
-	ON
-		ordensservicos.orcamentos_codigo=orcamentos.codigo
-	INNER JOIN	
-		clientes
-	ON 
-		orcamentos.clientes_id=id	
-	INNER JOIN
-		orcamentos_has_produtos
-	ON
-		orcamentos.codigo=orcamentos_has_produtos.orcamentos_codigo
-	INNER JOIN
-		usuarios
-	ON
-		ordensservicos.usuarios_id=usuarios.id 
-	GROUP BY orcamentos_codigo";
-}
-else if (isset($_GET['buscaCliente']) && $_GET['buscaCliente']!="") {
-$buscaCliente = $_GET['buscaCliente'];
-$comando = "SELECT 
-	ordensservicos.codigo, dataentrega, ordensservicos.orcamentos_codigo,  ordensservicos.status, ordensservicos.usuarios_id,
-	desconto,
-	precoatual, quantidade, 
-	clientes.nome AS nomeCliente,	
-	usuarios.nome AS nomeUsuario
+	$comando = 
+	"SELECT 
+		ordensservicos.codigo, dataentrega, ordensservicos.orcamentos_codigo,  ordensservicos.status, ordensservicos.usuarios_id,
+		desconto,
+		precoatual, quantidade, 
+		clientes.nome AS nomeCliente,	
+		usuarios.nome AS nomeUsuario
 	FROM 
 		orcamentos
 	INNER JOIN 
@@ -164,14 +117,74 @@ $comando = "SELECT
 	INNER JOIN
 		usuarios
 	ON
-		ordensservicos.usuarios_id=usuarios.id
-	WHERE
-		LOWER(clientes.nome) LIKE '%".$buscaCliente."%' 	
+		ordensservicos.usuarios_id=usuarios.id 
 	GROUP BY 
-		orcamentos.codigo
-		";
+		orcamentos.codigo";
+
 }
-	// echo $comando;
+else if (isset($_GET['buscaCliente'])==false){
+	$comando = 
+		"SELECT 
+			ordensservicos.codigo, dataentrega, ordensservicos.orcamentos_codigo,  ordensservicos.status, ordensservicos.usuarios_id,
+			desconto,
+			precoatual, quantidade, 
+			clientes.nome AS nomeCliente,	
+			usuarios.nome AS nomeUsuario
+		FROM  
+			orcamentos
+		INNER JOIN 
+			ordensservicos	
+		ON
+			ordensservicos.orcamentos_codigo=orcamentos.codigo
+		INNER JOIN	
+			clientes
+		ON 
+			orcamentos.clientes_id=id	
+		INNER JOIN
+			orcamentos_has_produtos
+		ON
+			orcamentos.codigo=orcamentos_has_produtos.orcamentos_codigo
+		INNER JOIN
+			usuarios
+		ON
+			ordensservicos.usuarios_id=usuarios.id 
+		GROUP BY orcamentos_codigo";
+
+}
+else if (isset($_GET['buscaCliente']) && $_GET['buscaCliente']!="") {
+
+	$buscaCliente = $_GET['buscaCliente'];
+	$comando = 
+		"SELECT 
+			ordensservicos.codigo, dataentrega, ordensservicos.orcamentos_codigo,  ordensservicos.status, ordensservicos.usuarios_id,
+			desconto,
+			precoatual, quantidade, 
+			clientes.nome AS nomeCliente,	
+			usuarios.nome AS nomeUsuario
+		FROM 
+			orcamentos
+		INNER JOIN 
+			ordensservicos	
+		ON
+			ordensservicos.orcamentos_codigo=orcamentos.codigo
+		INNER JOIN	
+			clientes
+		ON 
+			orcamentos.clientes_id=id	
+		INNER JOIN
+			orcamentos_has_produtos
+		ON
+			orcamentos.codigo=orcamentos_has_produtos.orcamentos_codigo
+		INNER JOIN
+			usuarios
+		ON
+			ordensservicos.usuarios_id=usuarios.id
+		WHERE
+			LOWER(clientes.nome) LIKE '%".$buscaCliente."%' 	
+		GROUP BY 
+			orcamentos.codigo";
+}
+
 	
 	$resultado = mysqli_query($conexao, $comando);
 	$linhas = mysqli_num_rows($resultado);
@@ -199,6 +212,7 @@ if ($linhas==0) {
 
 <tr><td colspan="7" id="semOrdemServico">Nenhuma ordem de serviço cadastrada</td></tr>
 
+
 <?php
 
 } else {
@@ -214,16 +228,16 @@ foreach ($ordensServicos as $cadaOrdem) {
 	$desconto = $cadaOrdem['desconto'];
 
 	$valorTotal = calculaValorTotal($cadaOrdem['orcamentos_codigo'], $conexao);
-	$valorTotal = number_format($valorTotal, 2, ',', '');
+	$valorTotal = number_format($valorTotal, 2, ',', ''); //máscara para o valor total
 
 	$dataEntregaBrasileira = $cadaOrdem['dataentrega'];
 	$dataEntregaBrasileira = date('d/m/Y', strtotime($dataEntregaBrasileira));
 
 	
 	$status = $cadaOrdem['status'];
-	// echo $status;
 
-	switch ($status) {
+	switch ($status) { // Captura o número do código do banco e transforma em string pro 
+					   // usuário saber em qual status está
 		case 1:
 			$status = "Aberto";
 			break;
@@ -234,38 +248,39 @@ foreach ($ordensServicos as $cadaOrdem) {
 			$status = "Feito";
 			break;
 	}
-	// echo $status;
 	
 ?>
-<tbody>
-<tr>
-<td><?=$cadaOrdem['codigo'];?></td>
-<td><?=$cadaOrdem['nomeCliente'];?></td>
-<td><?=$dataEntregaBrasileira;?></td>
-<td>R$ <?=$valorTotal;?></td>
-<td><?=$cadaOrdem['nomeUsuario'];?></td>
-<td><?=$status;?></td>
-<td width="5%">
-	<form action="visualizaOrdemServico.php" method="POST">
-		<input type="hidden" value="<?=$cadaOrdem['orcamentos_codigo'];?>" name="codigoOrcamento">
-		<button type="submit" class="botao" id="botaoVisualizar">
-			<img src="../../img/visualizar.png" alt="botão para visualizar a ordeem de serviço" id="imgVisualizar"
-			title="Visualizar Ordem de Serviço">
-		</button>
-	</form>
-</td>
-</tr>
+
+	<tbody>
+		<tr>
+			<td><?=$cadaOrdem['codigo'];?></td>
+			<td><?=$cadaOrdem['nomeCliente'];?></td>
+			<td><?=$dataEntregaBrasileira;?></td>
+			<td>R$ <?=$valorTotal;?></td>
+			<td><?=$cadaOrdem['nomeUsuario'];?></td>
+			<td><?=$status;?></td>
+
+			<td width="5%">
+				<form action="visualizaOrdemServico.php" method="POST">
+				<input type="hidden" value="<?=$cadaOrdem['orcamentos_codigo'];?>" name="codigoOrcamento">
+					<button type="submit" class="botao" id="botaoVisualizar">
+						<img src="../../img/visualizar.png" alt="botão para visualizar a ordeem de serviço" 
+						id="imgVisualizar" title="Visualizar Ordem de Serviço">
+					</button>
+				</form>
+			</td>
+			</tr>
 
 <?php
 }
 }
 ?>
 
-</tbody>
-</table>
+		</tbody>
+	</table>
 
 
-</fieldset>
+	</fieldset>
 			
 	</main>
 

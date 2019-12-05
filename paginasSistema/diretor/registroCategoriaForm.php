@@ -94,9 +94,11 @@
 			} else if(isset($_GET['buscaCategoria'])==false) {
 				$comando = "SELECT * FROM categorias";
 			}
-			// echo $comando;
+			
 			$resultado = mysqli_query($conexao, $comando);
 			$linhas = mysqli_num_rows($resultado);
+
+	
 
 			if ($linhas == 0) {
 

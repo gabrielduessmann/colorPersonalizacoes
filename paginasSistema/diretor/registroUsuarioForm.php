@@ -204,9 +204,10 @@
     <table id="tabela">
 
       <tr>
-        <th class = "tabelaNome">Nome Completo</th>
-        <th class = "tabelaUsuarios">Usuário</th>
-        <th class = "tabelaAcoes">Ações</th>
+		<th id="tabelaPermissao">Permissão</th>
+        <th id="tabelaNome">Nome Completo</th>
+        <th id="tabelaEmail">E-mail</th>
+        <th id="tabelaAcoes">Ações</th>
       </tr>
 
       <?php
@@ -233,7 +234,7 @@
        ?>
 
        <tr>
-         <td class = "outrasClasses" colspan="3">Nunhum usuário encontrado</td>
+         <td class = "outrasClasses" colspan="4">Nunhum usuário encontrado</td>
        </tr>
 
       <?php
@@ -244,13 +245,27 @@
           while ($cadaLinha = mysqli_fetch_assoc($resultado)) {
             array_push($usuariosRetornados, $cadaLinha);
           }
-
+		  $grauPermissao = "";
           foreach ($usuariosRetornados as $cadaUsuario) {
+			  
+				$grauPermissao = $cadaUsuario['graupermissao'];
+				switch ($grauPermissao) {
+					case 1:
+						$grauPermissao = "Diretor";
+						break;
+					case 2:
+						$grauPermissao = "Customizador";
+						break;
+					case 3:
+						$grauPermissao = "Atendente";
+						break;
+				}
       ?>
 
       <tr>
+	  	<td class="outrasClasses"><?=$grauPermissao;?></td>
         <td class = "outrasClasses"> <?php echo $cadaUsuario['nome'];?> </td>
-        <td class = "outrasClasses"> <?php echo $cadaUsuario['usuario'];?> </td>
+        <td class = "outrasClasses"> <?php echo $cadaUsuario['email'];?> </td>
         <td class = "outrasClasses">
 		
           <form action="editaUsuarioForm.php" method="POST">

@@ -15,22 +15,28 @@
         width: 100%;
         height: 94.2%;
     }
-    
-    .tabelaNome {
+
+    #tabelaPermissao {
         background-color: #4682B4;
-        width: 40%;
+        width: 12%;
         font-size: 18px;
     }
     
-    .tabelaUsuarios {
+    #tabelaNome {
+        background-color: #4682B4;
+        width: 20%;
+        font-size: 18px;
+    }
+    
+    #tabelaEmail {
         background-color: #4682B4;
         width: 25%;
         font-size: 18px;
     }
     
-    .tabelaAcoes {
+    #tabelaAcoes {
         background-color: #4682B4;
-        width: 15%;
+        width: 10%;
         font-size: 18px;
     }
     
