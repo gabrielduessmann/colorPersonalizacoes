@@ -115,12 +115,12 @@
 
 				<br><br>
 
-								<label class = "palavras" for = "estado"> Grau de permissão * </label>
-						<select id = "permissao" name="permissao">
-							<option value="1" <?php echo $usuario['graupermissao']==1?'selected':'';?>>Diretor</option>
-      				<option value="2" <?php echo $usuario['graupermissao']==2?'selected':'';?>>Customizador</option>
-      				<option value="3" <?php echo $usuario['graupermissao']==3?'selected':'';?>>Atendente</option>
-						</select>
+				<label class = "ladoEsquerdo" for = "estado"> Grau de permissão * </label>
+					<select id = "permissao" name="permissao" class="input">
+						<option value="1" <?php echo $usuario['graupermissao']==1?'selected':'';?>>Diretor</option>
+						<option value="2" <?php echo $usuario['graupermissao']==2?'selected':'';?>>Customizador</option>
+						<option value="3" <?php echo $usuario['graupermissao']==3?'selected':'';?>>Atendente</option>
+				</select>
 				<br>
 
 				</div>
@@ -129,36 +129,36 @@
 
 
 
-				<label for="rua">Rua</label>
+				<label for="rua" class="ladoEsquerdo">Rua</label>
 				<input type="text" placeholder="Digite aqui sua rua" value="<?=$usuario['rua'];?>" name="rua" class="input"  id="rua">
 
 <br><br>
 
-<label for="numero">Número *</label>
-<input type="text" placeholder="Digite aqui o número" onkeyup="somenteNumeros(this);" value="<?=$usuario['numero'];?>" name="numero" class="input" id="numero" maxlength="4">
+				<label for="numero" class="ladoEsquerdo">Número *</label>
+				<input type="text" placeholder="Digite aqui o número" onkeyup="somenteNumeros(this);" value="<?=$usuario['numero'];?>" name="numero" class="input" id="numero" maxlength="4">
 
 <br><br>
 
-				<label for="cep">CEP *</label>
+				<label for="cep" class="ladoEsquerdo">CEP *</label>
 				<input type="text"   placeholder="Ex.: 00000-000" value="<?=$usuario['cep'];?>" class="input" name="cep" id="cep">
 
 				<script type="text/javascript">$("#cep").mask("00000-000"); </script>
 
 <br><br>
 
-				<label for="cidade">Cidade</label>
+				<label for="cidade" class="ladoEsquerdo">Cidade</label>
 				<input type="text" name="cidade" class="input" onkeypress="return lettersOnly(event);" value="<?=$usuario['cidade'];?>" placeholder="Digite aqui sua cidade" id="cidade">
 
 
 
 <br><br>
 
-				<label for="bairro">Bairro</label>
+				<label for="bairro" class="ladoEsquerdo">Bairro</label>
 				<input type="text" name="bairro" onkeypress="return lettersOnly(event);" class="input" value="<?=$usuario['bairro'];?>" id="bairro" placeholder="Digite aqui seu Bairro">
 
 <br><br>
 
-				<label for = "estado" > Estado </label>
+				<label for = "estado" class="ladoEsquerdo"> Estado </label>
 						<input list = "listaEstados" onkeypress="return lettersOnly(event);" class="input" name = "estados" value="<?=$usuario['estado'];?>" id="estado" placeholder="Escolha aqui o seu estado" maxlength="2">
 					<datalist id = "listaEstados" >
 						<option value = "AC"></option>
@@ -191,15 +191,14 @@
 					</datalist>
 
 <br><br>
-					<button type = "reset" class="botao" id="limparCampos">
-						<img src = "../../img/limpar.png" alt="Botão limpar campos"> </button>
+				
 
-					<button type = "submit" class="botao">
-						<img src = "../../img/editar.png" alt="Botao cadastrar"> </button>
+					<button type = "submit" class="botao" id="botaoCadastrar">
+						Cadastrar
+					</button>
+
+
 				</div>
-
-
-
 
 			</fieldset>
 			</form>
@@ -207,11 +206,7 @@
 </main>
 </body>
 </html>
-<?php
-  }else {
-    header("Location: ../../index.php");
-  }
- ?>
+
  <script>
      function somenteNumeros(num) {
          var er = /[^0-9,]/;
