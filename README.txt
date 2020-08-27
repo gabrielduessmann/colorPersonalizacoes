@@ -1,4 +1,13 @@
 
+# Objective
+
+ // TO DO
+
+# How To Run
+
+To run this system in your browser, follow the steps below:
+
+## XAMPP 
 
 -Para acessar o bando de dados com alguns dados já inseridos dentro use o script que está localizado em bd/bd_copulado/bd_colorpersonalizacoes.sql
 -Na hora hora de colocar o banco no localhost/phpmyadmin não precisa criar a tabela, basta importar o arquivo,pois ele já vem com o script de criar a tabela
