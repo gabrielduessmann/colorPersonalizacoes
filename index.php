@@ -14,16 +14,16 @@
 		<nav class="menu">
 			<ul>
 				<a href="index.php"><li><img src="img/icone.png" id="logo" alt="icone"></li></a>
-				<a href="paginasSite/camisas.php"><li>Camisas</li></a>
-				<a href="paginasSite/canecas.php"><li>Canecas</li></a>
-				<li>Mais Produtos
+				<a href="websiteTabs/shirts.php"><li>Shirts</li></a>
+				<a href="websiteTabs/mugs.php"><li>Mugs</li></a>
+				<li>More Products
 					<ul class="submenu">
-						<a href="paginasSite/canetas.php"><li>Canetas</li></a>
-						<a href="paginasSite/chaveiros.php"><li>Chaveiros</li></a>
+						<a href="websiteTabs/pens.php"><li>Pens</li></a>
+						<a href="websiteTabs/keychains.php"><li>keychains</li></a>
 					</ul>
 				</li>
-				<a href="paginasSite/contato.php"><li>Contato</li></a>
-				<a href="paginasSite/entrar.php"><li>Entrar</li></a>
+				<a href="websiteTabs/contact.php"><li>Contact</li></a>
+				<a href="websiteTabs/login.php"><li>Login</li></a>
 
 			</ul>
 		</nav>
