@@ -1,5 +1,5 @@
 <?php
-  require_once("../paginasSistema/conexaoBanco.php");
+  require_once("../systemTabs/dbConnection.php");
   session_start();
 
   $email = $_POST['email'];
@@ -13,7 +13,7 @@
   $nome = $results['nome'];
 
   if ($email!=$email0) {
-    header("Location: esqueciminhasenha.php?retorno=0");
+    header("Location: forgotMyPassword.php?retorno=0");
   }else if ($email==$email0) {
 
     function generatePassword($qtyCaraceters = 8)
@@ -79,9 +79,9 @@
 
 
     if(!$mail->Send()) {
-      header("Location: entrar.php?retorno=0");
+      header("Location: login.php?retorno=0");
     } else {
-      header("Location: entrar.php?retorno=1");
+      header("Location: login.php?retorno=1");
     }
   }
 

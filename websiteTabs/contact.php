@@ -22,7 +22,7 @@
 			<div id="divFormContatoEsquerda">
 		<h3 id="tituloMensagem">Deixe sua mensagem!</h3>
 
-			<form action="enviaEmail.php" method="POST"  onsubmit="return validarCampos()" id="formContato">
+			<form action="sendEmail.php" method="POST"  onsubmit="return validarCampos()" id="formContato">
 
 				<label class="campos" for="nome">Nome Completo</label><br>
 				<input class="camposForm" type="text" name="nome" id="nome" placeholder="Digite seu nome completo aqui"><br>

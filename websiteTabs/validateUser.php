@@ -1,5 +1,5 @@
 <?php
-  require_once("../paginasSistema/conexaoBanco.php");
+  require_once("../systemTabs/dbConnection.php");
   session_start();
 
   $usuario = $_POST['usuario'];
