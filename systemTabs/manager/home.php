@@ -30,7 +30,7 @@
   <div id="bemvindo">
 
 
-		Bem-Vindo(a),
+		Welcomme,
     <br><br>
     
 		<p id="nomeUsuario">

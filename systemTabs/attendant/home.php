@@ -28,7 +28,7 @@ session_start();
 	<main id="conteudo">
 	
 		<div id="bemvindo">
-		Bem-Vindo(a),
+		Welcome,
 		<br><br>
 		<p id="nomeUsuario">
 	<?php

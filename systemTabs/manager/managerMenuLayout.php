@@ -4,7 +4,7 @@
 		<nav class="menu">
 			
 		<ul id="menuPrincipal">
-			<a href="principal.php" class="botaoClique"><img src="../../img/icone.png" id="logo" alt="icone"><li id="listaLogo"></li></a>
+			<a href="home.php" class="botaoClique"><img src="../../img/icone.png" id="logo" alt="icone"><li id="listaLogo"></li></a>
 			<li class="menuDesce">
 				<a href="" class="botaoClique"><p class="dropdown">Registers</p></a>
 				<ul class="submenu" id="submenu1">
