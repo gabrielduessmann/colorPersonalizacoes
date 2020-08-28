@@ -17,7 +17,7 @@
 <head>
   <title>Color Personalizações</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/diretor/registroCategoria.css">
+  <link rel="stylesheet" href="../../css/manager/registerCategory.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
   <script src="../../js/manager/registerCategory.js"></script>
 </head>

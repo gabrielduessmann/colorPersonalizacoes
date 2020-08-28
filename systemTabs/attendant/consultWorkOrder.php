@@ -17,7 +17,7 @@ session_start();
 <head>
 	<title> Atendente - Ordem de Serviço </title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../../css/atendente/consultaOrdemServico.css">
+	<link rel="stylesheet" href="../../css/attendant/consultWorkOrder.css">
 	<link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
 	<script src="../../js/customizer/editWorkOrder.js"></script>
 </head>

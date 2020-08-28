@@ -17,7 +17,7 @@
 <head>
   <title>Diretor - Registro de Produto</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/diretor/registroProduto.css">
+  <link rel="stylesheet" href="../../css/manager/registerProduct.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
   <script src="../../js/manager/registerProduct.js"></script>
 </head>

@@ -17,7 +17,7 @@
 <head>
   <title> Diretor - Ordem de Serviço </title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/diretor/registroOrcamento.css">
+  <link rel="stylesheet" href="../../css/manager/registerBudget.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>

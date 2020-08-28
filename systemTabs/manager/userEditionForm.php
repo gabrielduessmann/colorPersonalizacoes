@@ -16,7 +16,7 @@
 <head>
   <title>Diretor - Registro de Usuário</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/diretor/registroUsuario.css">
+  <link rel="stylesheet" href="../../css/manager/registerUser.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
   <script src="../../js/manager/registerUser.js"></script>
 </head>

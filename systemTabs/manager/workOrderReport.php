@@ -22,7 +22,7 @@
 <head>
   <title>Diretor - Relatório de Ordens de Serviços</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/diretor/relatorioOrdensServicos.css">
+  <link rel="stylesheet" href="../../css/manager/workOrderReport.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
   <!-- <script src="../../js/manager/reportWorKOrder.js"></script> -->
 </head>

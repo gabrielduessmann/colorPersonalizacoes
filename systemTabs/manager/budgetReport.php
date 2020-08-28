@@ -17,7 +17,7 @@
 <head>
   <title>Diretor - Relatório de Orçamentos</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/diretor/relatorioOrcamentos.css">
+  <link rel="stylesheet" href="../../css/manager/budgetReport.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
 
 </head>

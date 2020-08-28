@@ -17,7 +17,7 @@ session_start();
 <head>
   <title>Atendente - Principal</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/atendente/principal.css">
+  <link rel="stylesheet" href="../../css/attendant/home.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
 </head>
 

@@ -16,7 +16,7 @@ session_start();
 <head>
   <title> Diretor - Edição de Cliente </title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/diretor/registroCliente.css">
+  <link rel="stylesheet" href="../../css/manager/registerClient.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
   <script src="../../js/manager/editClient.js"></script>
 </head>

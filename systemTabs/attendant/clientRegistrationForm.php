@@ -17,7 +17,7 @@ session_start();
 <head>
   <title> Diretor - Registro de Cliente </title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/atendente/registroCliente.css">
+  <link rel="stylesheet" href="../../css/attendant/registerClient.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
   <script src="../../js/attendant/registerClient.js"></script>
 </head>

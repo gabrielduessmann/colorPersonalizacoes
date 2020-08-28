@@ -16,7 +16,7 @@
 <head>
   <title> Customizador - Ordem de Serviço </title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/customizador/editaOrdemServico.css">
+  <link rel="stylesheet" href="../../css/customizer/editWorkOrder.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
   <script src="../../js/customizer/editWorkOrder.js"></script>
 </head>
