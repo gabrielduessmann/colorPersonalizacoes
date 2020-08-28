@@ -5,7 +5,7 @@
 <head>
 	<title> Canetas </title>
 	<meta charset = "UTF-8">
-	<link rel="stylesheet" href="../css/canetas.css">
+	<link rel="stylesheet" href="../css/pens.css">
 	<link rel="icon" href="../img/icone.png" type="image/png" sizes="18x18">
 </head> 
 

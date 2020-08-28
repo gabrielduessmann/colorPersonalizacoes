@@ -5,7 +5,7 @@
 <head>
 	<title> Chaveiros </title>
 	<meta charset = "UTF-8">
-	<link rel="stylesheet" href="../css/chaveiros.css">
+	<link rel="stylesheet" href="../css/keychains.css">
 	<link rel="icon" href="../img/icone.png" type="image/png" sizes="18x18">
 </head> 
 

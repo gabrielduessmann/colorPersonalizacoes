@@ -5,9 +5,9 @@
 <head>
   <title>Entrar</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/entrar.css">
+  <link rel="stylesheet" href="../css/login.css">
   <link rel="icon" href="../img/icone.png" type="image/png" sizes="18x18">
-  <script src="../js/entrar.js"></script>
+  <script src="../js/login.js"></script>
 </head>
 
 <body>

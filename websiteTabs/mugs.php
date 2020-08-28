@@ -5,7 +5,7 @@
 <head>
 	<title> Canecas </title>
 	<meta charset = "UTF-8">
-	<link rel="stylesheet" href="../css/canecas.css">
+	<link rel="stylesheet" href="../css/mugs.css">
 	<link rel="icon" href="../img/icone.png" type="image/png" sizes="18x18">
 </head> 
 

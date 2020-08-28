@@ -5,9 +5,9 @@
 <head>
 	<title>Contato</title>
 	<meta charset = "UTF-8">
-	<link rel="stylesheet" href="../css/contato.css">
+	<link rel="stylesheet" href="../css/contact.css">
 	<link rel="icon" href="../img/icone.png" type="image/png" sizes="18x18">
-	<script src="../js/contato.js"></script>
+	<script src="../js/contact.js"></script>
 </head>
 
 <body>
