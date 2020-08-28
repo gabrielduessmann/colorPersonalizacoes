@@ -3,16 +3,16 @@
 <nav class="menu">
 	<ul>
 		<a href="../index.php"><li><img src="../img/icone.png" id="logo" alt="icone"></li></a>
-		<a href="camisas.php"><li>Camisas</li></a>
-		<a href="canecas.php"><li>Canecas</li></a>
-		<li>Mais Produtos
+		<a href="shirts.php"><li>Shirts</li></a>
+		<a href="mugs.php"><li>Mugs</li></a>
+		<li>More Products
 			<ul class="submenu">
-				<a href="canetas.php"><li>Canetas</li></a>
-				<a href="chaveiros.php"><li>Chaveiros</li></a>
+				<a href="pens.php"><li>Mugs</li></a>
+				<a href="keychains.php"><li>Keychains</li></a>
 			</ul>
 		</li>
-		<a href="contato.php"><li>Contato</li></a>
-		<a href="entrar.php"><li>Entrar</li></a>
+		<a href="contact.php"><li>Contact</li></a>
+		<a href="login.php"><li>Login</li></a>
 
 		</ul>
 </nav>
