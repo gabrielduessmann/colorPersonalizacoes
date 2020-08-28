@@ -149,9 +149,9 @@
 	<?php
 	if(isset($_GET['retorno'])==true){
 		if($_GET['retorno']==1){
-			include("alertas_exclusao/sucessoExclusaoCategoria.html");
+			include("exclusion_alerts/successCategory.html");
 		} else if($_GET['retorno']==2){
-			include("alertas_exclusao/erroExclusaoCategoria.html");
+			include("exclusion_alerts/errorCategory.html");
 		}	
 	}
 	?>

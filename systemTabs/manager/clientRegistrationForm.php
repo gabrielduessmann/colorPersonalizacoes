@@ -286,9 +286,9 @@
 	<?php
 	if(isset($_GET['retorno'])==true){
 		if($_GET['retorno']==1){
-			include("alertas_exclusao/erroExclusaoCliente.html");
+			include("exclusion_alerts/errorClient.html");
 		} else if($_GET['retorno']==2){
-			include("alertas_exclusao/sucessoExclusaoCliente.html");
+			include("alertas_exclusao/successClient.html");
 		}	
 	}
 	?>
