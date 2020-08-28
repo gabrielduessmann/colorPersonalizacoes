@@ -24,7 +24,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/diretor/relatorioOrdensServicos.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
-  <script src="../../js/diretor/relatorioOrdensServicos.js"></script>
+  <!-- <script src="../../js/manager/reportWorKOrder.js"></script> -->
 </head>
 
 <body>

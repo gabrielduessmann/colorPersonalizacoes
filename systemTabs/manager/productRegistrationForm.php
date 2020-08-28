@@ -19,7 +19,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/diretor/registroProduto.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
-  <script src="../../js/diretor/registroProduto.js"></script>
+  <script src="../../js/manager/registerProduct.js"></script>
 </head>
 
 <body>

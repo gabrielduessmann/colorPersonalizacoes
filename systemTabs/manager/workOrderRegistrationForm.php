@@ -19,7 +19,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/diretor/registroOrdemServico.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
-  <script src="../../js/diretor/registroOrdemServico.js"></script>
+  <script src="../../js/manager/registerWorkOrder.js"></script>
 </head>
 
 <body>

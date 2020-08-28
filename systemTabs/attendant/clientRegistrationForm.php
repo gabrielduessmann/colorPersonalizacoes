@@ -19,7 +19,7 @@ session_start();
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/atendente/registroCliente.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
-  <script src="../../js/atendente/registroCliente.js"></script>
+  <script src="../../js/attendant/registerClient.js"></script>
 </head>
 
 <body>
@@ -207,7 +207,7 @@ session_start();
 					
 	<?php
 		
-		require_once("../dbConnetion.php");
+		require_once("../dbConnection.php");
 	
 		if(isset($_GET['nomeCliente'])== false){
 			$comando = "SELECT * FROM clientes";

@@ -9,7 +9,7 @@
 
 
 
-	require_once("../dbConnetion.php");
+	require_once("../dbConnection.php");
 	
 // Pegando dados do banco
 	$idCliente = $_POST['idCliente'];	

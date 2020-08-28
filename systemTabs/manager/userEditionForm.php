@@ -18,7 +18,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/diretor/registroUsuario.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
-  <script src="../../js/diretor/registroUsuario.js"></script>
+  <script src="../../js/manager/registerUser.js"></script>
 </head>
 
 <body>

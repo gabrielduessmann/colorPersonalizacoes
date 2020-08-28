@@ -19,7 +19,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/diretor/registroCategoria.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
-  <script src="../../js/diretor/editaCategoria.js"></script>
+  <script src="../../js/manager/editCategory.js"></script>
 </head>
 
 <body>

@@ -18,7 +18,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/customizador/editaOrdemServico.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
-  <script src="../../js/customizador/editaOrdemServico.js"></script>
+  <script src="../../js/customizer/editWorkOrder.js"></script>
 </head>
 
 <body>
