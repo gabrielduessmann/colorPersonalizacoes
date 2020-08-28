@@ -10,7 +10,7 @@
     $codigoOrdemServico = $_POST['codigoOrdemServico'];
     // echo $codigoOrdemServico;
 
-    require_once("../conexaoBanco.php");
+    require_once("../dbConnection.php");
     
 
     $comando = "UPDATE ordensservicos SET status=3 WHERE codigo=".$codigoOrdemServico;
@@ -19,14 +19,14 @@
     $resultado = mysqli_query($conexao, $comando);
     
     if ($resultado==true) {
-        header("Location: editaOrdemServicoForm.php?retorno=ok");
+        header("Location: workOrderEditionForm.php?retorno=ok");
     } else {
-        header("Location: editaOrdemServicoForm.php?retorno=Nok");
+        header("Location: workOrderEditionForm.php?retorno=Nok");
     }
 
     
     }else {
-        header("Location: ../../paginasSite/entrar.php");
+        header("Location: ../../websiteTabs/login.php");
     }
 
 ?>

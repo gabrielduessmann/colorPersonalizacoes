@@ -26,7 +26,7 @@ session_start();
 
 <body>
 
-	<?php include("menuCustomizador.php"); ?>	
+	<?php include("customizerMenuLayout.php"); ?>	
 
 	<main id="conteudo">	
 			
@@ -38,13 +38,13 @@ session_start();
 	<legend class = "legend"> Orçamento </legend>
 				
 	
-	<form action="editaOrdemServicoForm.php" method="POST"  onsubmit="return validarCamposOrdemServico()">
+	<form action="workOrderEditionForm.php" method="POST"  onsubmit="return validarCamposOrdemServico()">
 
 
 
 <?php
 
-    require_once("../conexaoBanco.php");
+    require_once("../dbConnection.php");
 
     $codigoOrdemServico= $_POST['codigoOrdemServico'];
 
@@ -325,6 +325,6 @@ if ($orcamento['cep'] != NULL) {
 <?php
 
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

@@ -7,18 +7,18 @@ session_start();
 
 
 
-    require_once("../conexaoBanco.php");
+    require_once("../dbConnection.php");
 
     $codigoOrdemServico = $_POST['codigoOrdemServico'];
 
     $comando = "UPDATE ordensservicos SET status=1 WHERE codigo=".$codigoOrdemServico;
     $resultado = mysqli_query($conexao, $comando);
 
-    header("Location: editaOrdemServicoForm.php");
+    header("Location: workOrderEditionForm.php");
 
 
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
   
  ?>

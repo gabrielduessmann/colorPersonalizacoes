@@ -25,7 +25,7 @@
 
 	<main id = "conteudoPrincipal">
 
-	<?php include("menuCustomizador.php") ?>
+	<?php include("customizerMenuLayout.php") ?>
 
 	<br>
 	<h1 id = "tituloPag">Ordem de Serviço </h1>
@@ -53,7 +53,7 @@
 
 	<?php
 		
-		require_once("../conexaoBanco.php");
+		require_once("../dbConnection.php");
 		$comando = 
 		"SELECT 
 			ordensservicos.codigo, ordensservicos.dataentrega, nome, 
@@ -130,13 +130,13 @@
 				}
 	?>
 					<td width="16%">
-						<form action="visualizaOrdemServico.php" method="POST"> 
+						<form action="viewWorkOrder.php" method="POST"> 
 							<input type="hidden" name="codigoOrdemServico" value="<?=$cadaOrdemAberta['codigo'];?>">
 							<button type="submit">
 								<img src="../../img/visualizar.png" class="imgVisualizar" title="visualizar">
 							</button>
 						</form>
-						<form action="editaStatusOrdemServicoParaFazendo.php" method="POST"> 
+						<form action="editWOrkOrderStatusToDoing.php" method="POST"> 
 							<input type="hidden" name="codigoOrdemServico" value="<?=$cadaOrdemAberta['codigo'];?>">
 							<button type="submit">
 								<img src="../../img/customizar.png" id="imgCustomizar" title="finalizar">
@@ -180,7 +180,7 @@
 
 	<?php
 		
-		require_once("../conexaoBanco.php");
+		require_once("../dbConnection.php");
 		
 		$comando = 
 		"SELECT 
@@ -261,19 +261,19 @@
 				}
 	?>
 					<td width="22%">
-						<form action="visualizaOrdemServico.php" method="POST"> 
+						<form action="viewWorkOrder.php" method="POST"> 
 							<input type="hidden" name="codigoOrdemServico" value="<?=$cadaOrdemAberta['codigo'];?>">
 							<button type="submit">
 								<img src="../../img/visualizar.png" class="imgVisualizar" title="visualizar">
 							</button>
 						</form>
-						<form action="editaStatusOrdemServicoParaFeito.php" method="POST"> 
+						<form action="editWorkOrderStatusToDone.php" method="POST"> 
 							<input type="hidden" name="codigoOrdemServico" value="<?=$cadaOrdemAberta['codigo'];?>">
 							<button type="submit">
 								<img src="../../img/correto.png" id="imgFinalizar" title="finalizar">
 							</button>
 						</form>
-						<form action="cancelaFazendoOrdemServico.php" method="POST"> 
+						<form action="cancelWorkOrder.php" method="POST"> 
 							<input type="hidden" name="codigoOrdemServico" value="<?=$cadaOrdemAberta['codigo'];?>">
 							<button type="submit">
 								<img src="../../img/rejeitar.png" id="imgRejeitar">
@@ -311,6 +311,6 @@
 
 <?php
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

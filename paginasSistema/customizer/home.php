@@ -22,7 +22,7 @@
 
 <body>
 		
-	<?php include("menuCustomizador.php") ?>
+	<?php include("customizerMenuLayout.php") ?>
 		
 	<main id="conteudo">
 
@@ -34,7 +34,7 @@
 
 	<?php
 	
-		require_once("../conexaoBanco.php");
+		require_once("../dbConnection.php");
 
 		$comando = "SELECT nome FROM usuarios WHERE id=".$_SESSION['idLogado'];
 		$resultado = mysqli_query($conexao, $comando);
@@ -56,6 +56,6 @@
 <?php
 
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>
