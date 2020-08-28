@@ -7,7 +7,7 @@
 
 
 
-    require_once("../conexaoBanco.php");
+    require_once("../dbConnection.php");
     
     $codigo = $_POST['id'];
     
@@ -45,7 +45,7 @@
 
 <?php
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>
 

@@ -25,7 +25,7 @@ session_start();
 <body>
 
 
-<?php include("menuAtendente.php");  ?>
+<?php include("attendantMenuLayout.php");  ?>
 
 	<main id="conteudo">
 	
@@ -39,7 +39,7 @@ session_start();
 		
 			<legend class = "legend"> Dados Pessoais do Cliente </legend>
 		
-			<form action="registrarCliente.php" method="POST" id="formClientes" onsubmit="return validarCampos()">  
+			<form action="registerClient.php" method="POST" id="formClientes" onsubmit="return validarCampos()">  
 			
 <div id = "divEsquerda">
 			
@@ -207,7 +207,7 @@ session_start();
 					
 	<?php
 		
-		require_once("../conexaoBanco.php");
+		require_once("../dbConnetion.php");
 	
 		if(isset($_GET['nomeCliente'])== false){
 			$comando = "SELECT * FROM clientes";
@@ -260,7 +260,7 @@ session_start();
 	?>		
 	
 			<td class = "outrasClasses">
-				<form action="editaClienteForm.php" method="POST" >
+				<form action="clientEditionForm.php" method="POST" >
 						
 						<input type = "hidden" value="<?= $cadaCliente['id']; ?>" name = "id" id = "idEditar">
 					
@@ -268,7 +268,7 @@ session_start();
 					
 				</form>
 
-				<form action = "excluiCliente.php" method = "POST" >
+				<form action = "deleteClient.php" method = "POST" >
 					
 						<input type = "hidden" value = "<?=$cadaCliente['id']; ?>" name = "id" id = "idExcluir">
 					
@@ -307,6 +307,6 @@ session_start();
 <?php
 
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

@@ -7,7 +7,7 @@ session_start();
 	if (isset($_SESSION['idLogado']) && $_SESSION['nivelLogado']==3) {
 
 
-	require_once("../conexaoBanco.php");
+	require_once("../dbConnection.php");
 	
 	
 // Pegando dados do banco
@@ -93,13 +93,13 @@ session_start();
 	$resultado = mysqli_query($conexao, $comando);
 
 	if($resultado == true){
-		header("Location: registroClienteForm.php");
+		header("Location: clientRegistrationForm.php");
 	} else{
-		header("Location: registroClienteForm.php");
+		header("Location: clientRegistrationForm.php");
 	}
 
 	
 }else {
-  header("Location: ../../paginasSite/entrar.php");
+  header("Location: ../../websiteTabs/login.php");
 }
 ?>

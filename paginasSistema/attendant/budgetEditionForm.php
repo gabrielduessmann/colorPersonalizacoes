@@ -61,7 +61,7 @@
 
 	
 ?>
-	<?php include("menuAtendente.php"); ?>	
+	<?php include("attendantMenuLayout.php"); ?>	
 
 	<main id="conteudo">	
 			
@@ -73,13 +73,13 @@
 	<legend class = "legend"> Orçamento </legend>
 				
 	
-	<form action="editaOrcamento.php" method="POST"  onsubmit="return validarCampos()" id="formOrcamento">
+	<form action="editBudget.php" method="POST"  onsubmit="return validarCampos()" id="formOrcamento">
 
 
 
 <?php
 
-    require_once("../conexaoBanco.php");
+    require_once("../dbConnection.php");
 
     $codigoOrcamento = $_POST['codigoOrcamento'];
     
@@ -534,6 +534,6 @@ if ($orcamento['cep'] == NULL) { // entregar no local do cliente
 
 <?php
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

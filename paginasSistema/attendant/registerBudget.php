@@ -7,7 +7,7 @@
 
 
 
-    require_once("../conexaoBanco.php");
+    require_once("../dbConnection.php");
 
     $cliente = $_POST['cliente'];
     // $dataEmissao = $cliente.date('Y-m-d');
@@ -71,14 +71,14 @@
     }
 
     if ($resultado3==true) {
-        header("Location: registroOrcamentoForm.php?retorno=ok");
+        header("Location: budgetRegistrationForm.php?retorno=ok");
     } else {
-        header("Location: registroOrcamentoForm.php?retorno=Nok");    
+        header("Location: budgetRegistrationForm.php?retorno=Nok");    
     }
 ?>
 
 <?php
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

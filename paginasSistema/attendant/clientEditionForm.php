@@ -28,7 +28,7 @@ session_start();
 
 <?php
 
-	include("menuAtendente.php");
+	include("attendantMenuLayout.php");
 ?>
 <br>
 <h1 id = "tituloPag">Edição de Cliente </h1>
@@ -39,7 +39,7 @@ session_start();
 		
 		<?php 
 		
-			require_once("../conexaoBanco.php");
+			require_once("../dbConnection.php");
 			
 			$idCliente = $_POST['id'];
 		//	echo $idCliente;
@@ -53,7 +53,7 @@ session_start();
 			
 		
 		
-			<form action="editaCliente.php" method="POST" id="formClientes" onsubmit="return validarCampos()">  
+			<form action="editClient.php" method="POST" id="formClientes" onsubmit="return validarCampos()">  
 			
 <div id = "divEsquerda">
 
@@ -173,6 +173,6 @@ session_start();
 <?php
 
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

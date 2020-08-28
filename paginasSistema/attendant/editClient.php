@@ -9,7 +9,7 @@
 
 
 
-	require_once("../conexaoBanco.php");
+	require_once("../dbConnetion.php");
 	
 // Pegando dados do banco
 	$idCliente = $_POST['idCliente'];	
@@ -59,14 +59,14 @@
 	$resultado = mysqli_query($conexao, $comando);
 	
 	if($resultado == true){
-		header("Location: registroClienteForm.php");
+		header("Location: clientRegistrationForm.php");
 	}else{
-		header("Location: registroClienteForm.php");
+		header("Location: clientRegistrationForm.php");
 	}
 ?>
 
 <?php
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

@@ -8,7 +8,7 @@ session_start();
 
 
 
-	require_once("../conexaoBanco.php");
+	require_once("../dbConnection.php");
 
 	$idCliente = $_POST['id'];
 	
@@ -22,16 +22,16 @@ session_start();
 //	echo $linhas;
 
 	if($linhas == 0){	
-		header("Location:registroClienteForm.php?retorno=1");	
+		header("Location:clientRegistrationForm.php?retorno=1");	
 	} else{
 		$comando2 = "DELETE FROM clientes WHERE clientes.id NOT IN (SELECT clientes_id FROM orcamentos) AND id=".$idCliente; 
 		$resultado = mysqli_query($conexao, $comando2);
-		header("Location:registroClienteForm.php?retorno=2");
+		header("Location:clientRegistrationForm.php?retorno=2");
 	}
 
 	
 }else {
-  header("Location: ../../paginasSite/entrar.php");
+  header("Location: ../../websiteTabs/login.php");
 }
 ?>
 

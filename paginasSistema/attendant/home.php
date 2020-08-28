@@ -23,7 +23,7 @@ session_start();
 
 <body>
 		
-	<?php include("menuAtendente.php")?>
+	<?php include("attendantMenuLayout.php")?>
 
 	<main id="conteudo">
 	
@@ -33,7 +33,7 @@ session_start();
 		<p id="nomeUsuario">
 	<?php
 	
-		require_once("../conexaoBanco.php");
+		require_once("../dbConnection.php");
 
 		$comando = "SELECT nome FROM usuarios WHERE id=".$_SESSION['idLogado'];
 		$resultado = mysqli_query($conexao, $comando);
@@ -54,6 +54,6 @@ session_start();
 <?php
 
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

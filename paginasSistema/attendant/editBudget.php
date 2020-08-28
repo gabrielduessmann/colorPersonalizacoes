@@ -7,7 +7,7 @@
 
 
 
-    require_once("../conexaoBanco.php");
+    require_once("../dbConnection.php");
 
     $codigoOrcamento = $_POST['codigoOrcamento'];
     // echo $codigoOrcamento;
@@ -94,14 +94,14 @@
 
 
     if ($resultado5==true) {
-        header("Location: registroOrcamentoForm.php?retorno=ok");
+        header("Location: budgetRegistrationForm.php?retorno=ok");
     } else {    
-        header("Location: registroOrcamentoForm.php?retorno=Nok");    
+        header("Location: budgetRegistrarionForm.php?retorno=Nok");    
     }
 
 
     }else {
-        header("Location: ../../paginasSite/entrar.php");
+        header("Location: ../../websiteTabs/login.php");
 }
 ?>
 

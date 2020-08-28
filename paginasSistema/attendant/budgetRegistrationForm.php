@@ -30,7 +30,7 @@
 
 function calculaValorTotal($codigo, $conexao){
 	
-	require_once("../conexaoBanco.php");
+	require_once("../dbConnetion.php");
 	
 	$sql="SELECT SUM(orcamentos_has_produtos.quantidade*orcamentos_has_produtos.precoatual) 
 	as valorTotal 
@@ -44,7 +44,7 @@ function calculaValorTotal($codigo, $conexao){
 ?>
 
 
-	<?php include("menuAtendente.php"); ?>	
+	<?php include("attendantMenuLayout.php"); ?>	
 
 	<main id="conteudo">
 	
@@ -58,7 +58,7 @@ function calculaValorTotal($codigo, $conexao){
 				<legend class = "legend"> Orçamento </legend>
 				
 	
-	<form action="registraOrcamento.php" method="POST"  onsubmit="return validarCampos()" id="formOrcamento">
+	<form action="registerBudget.php" method="POST"  onsubmit="return validarCampos()" id="formOrcamento">
 
 
 			
@@ -67,7 +67,7 @@ function calculaValorTotal($codigo, $conexao){
 
 	<?php
 
-		require_once("../conexaoBanco.php");
+		require_once("../dbConnection.php");
 
 		$comando = "SELECT id, nome FROM clientes";
 		$resultado = mysqli_query($conexao, $comando);
@@ -452,13 +452,13 @@ function calculaValorTotal($codigo, $conexao){
 		<td class = 'linhasTituloSuperior'>".$valorParcela."</td>	
 		<td class = 'linhasTituloSuperior'>R$ ".$valorTotal."</td>
 		<td>
-		<form action='editaOrcamentoForm.php' method='POST'>
+		<form action='budgetEditionForm.php' method='POST'>
 			<input type='hidden' value='".$cadaOrca['codigo']."' name='codigoOrcamento' id='inputEditar'>						
 			<button type='submit' class='botaoLapis'>
 				<img src='../../img/lapis.png' alt='Botão editar' class='imgLapis'>
 			</button>
 		</form>
-		<form action='excluiOrcamento.php' method='POST'>
+		<form action='deleteBudget.php' method='POST'>
 			<input type='hidden' value='".$cadaOrca['codigo']."' name='codigoOrcamento' id='inputExcluir'>
 			<button type='submit' class='botaoLixeira'>
 				<img src='../../img/lixeira.png' alt='Botão excluir' class='imgLixeira'>
@@ -540,6 +540,6 @@ function calculaValorTotal($codigo, $conexao){
 
 <?php
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

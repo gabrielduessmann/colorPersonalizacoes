@@ -62,7 +62,7 @@ function calculaValorTotal($codigo, $conexao){
 
 ?>
 	
-	<?php include("menuAtendente.php") ?>
+	<?php include("attendantMenuLayout.php") ?>
 	<br>
 
 	<!-- Mostra todas as ordens de serviço -->
@@ -88,7 +88,7 @@ function calculaValorTotal($codigo, $conexao){
 
 <?php
 
-	require_once("../conexaoBanco.php");
+	require_once("../dbConnection.php");
 
 if (isset($_GET['buscaCliente']) && $_GET['buscaCliente']=="") { 	
 
@@ -261,7 +261,7 @@ foreach ($ordensServicos as $cadaOrdem) {
 			<td><?=$status;?></td>
 
 			<td width="5%">
-				<form action="visualizaOrdemServico.php" method="POST">
+				<form action="viewWorkOrder.php" method="POST">
 				<input type="hidden" value="<?=$cadaOrdem['orcamentos_codigo'];?>" name="codigoOrcamento">
 					<button type="submit" class="botao" id="botaoVisualizar">
 						<img src="../../img/visualizar.png" alt="botão para visualizar a ordeem de serviço" 
@@ -290,6 +290,6 @@ foreach ($ordensServicos as $cadaOrdem) {
 
 <?php
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

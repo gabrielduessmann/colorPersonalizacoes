@@ -7,7 +7,7 @@
 
 
 
-    require_once("../conexaoBanco.php");
+    require_once("../dbConnection.php");
     
     $codigo = $_POST['codigoOrcamento'];
 
@@ -22,13 +22,13 @@
         $comando3 = "DELETE FROM orcamentos WHERE codigo=".$codigo;
         $resultado3 = mysqli_query($conexao, $comando3);
 
-        header("Location: registroOrcamentoForm.php?retorno=certo");
+        header("Location: budgetRegistrationForm.php?retorno=certo");
     } else {
-        header("Location: registroOrcamentoForm.php?retorno=erro");
+        header("Location: budgetRegistrationForm.php?retorno=erro");
     }
 
     
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>

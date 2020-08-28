@@ -26,7 +26,7 @@
 
 <body>
 
-	<?php include("menuAtendente.php"); ?>	
+	<?php include("attendantMenuLayout.php"); ?>	
 
 	<main id="conteudo">	
 			
@@ -38,13 +38,13 @@
 	<legend class = "legend"> Orçamento </legend>
 				
 	
-	<form action="consultaOrdemServico.php" method="POST"  onsubmit="return validarCamposOrdemServico()">
+	<form action="consultWorkOrder.php" method="POST"  onsubmit="return validarCamposOrdemServico()">
 
 
 
 <?php
 
-    require_once("../conexaoBanco.php");
+    require_once("../dbConnection.php");
 
     $codigoOrcamento = $_POST['codigoOrcamento'];
     
@@ -322,6 +322,6 @@ if ($orcamento['cep'] != NULL) {
 
 <?php
   }else {
-    header("Location: ../../paginasSite/entrar.php");
+    header("Location: ../../websiteTabs/login.php");
   }
  ?>
