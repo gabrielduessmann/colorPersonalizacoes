@@ -29,7 +29,7 @@ if ($linhas==0) {
   if($_SESSION['nivelLogado']==1){
     header("Location: manager/home.php");
   }else if($_SESSION['nivelLogado']==2){
-    header("Location: costumizer/home.php");
+    header("Location: customizer/home.php");
   }else {
     header("Location: attendant/home.php");
   }
