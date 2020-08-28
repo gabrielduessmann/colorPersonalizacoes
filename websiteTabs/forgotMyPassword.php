@@ -4,9 +4,9 @@
 <head>
 	<title>Entrar</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	<link rel="stylesheet" href="../css/esqueciminhasenha.css">
+	<link rel="stylesheet" href="../css/forgotMyPassword.css">
 	<link rel="icon" href="../img/icone.png" type="image/png" sizes="18x18">
-	<script src="../js/esqueciminhasenha.js"></script>
+	<script src="../js/forgotMyPassword.js"></script>
 </head>
 
 <body>
