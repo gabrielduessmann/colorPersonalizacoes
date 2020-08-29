@@ -237,7 +237,8 @@
          <td class = "outrasClasses" colspan="4">Nunhum usuário encontrado</td>
        </tr>
 
-      <?php
+	  <?php
+		}
         else{
           $usuariosRetornados = array();
 
