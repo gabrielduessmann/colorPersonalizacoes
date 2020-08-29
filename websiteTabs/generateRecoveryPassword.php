@@ -4,7 +4,6 @@
 
   $email = $_POST['email'];
   $usuario = $_SESSION['usuario'];
-  // echo $nome." ".$cpf." ".$email." ".$_SESSION['usuario'];
 
   $comando="SELECT email, nome FROM usuarios WHERE usuario='$usuario'";
   $resultado = mysqli_query($conexao, $comando);
@@ -18,26 +17,19 @@
 
     function generatePassword($qtyCaraceters = 8)
 {
-    //Letras minúsculas embaralhadas
     $smallLetters = str_shuffle('abcdefghijklmnopqrstuvwxyz');
 
-    //Letras maiúsculas embaralhadas
     $capitalLetters = str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
-    //Números aleatórios
     $numbers = (((date('Ymd') / 12) * 24) + mt_rand(800, 9999));
     $numbers .= 1234567890;
 
-    //Caracteres Especiais
     $specialCharacters = str_shuffle('!@#$%*-');
 
-    //Junta tudo
     $characters = $capitalLetters.$smallLetters.$numbers.$specialCharacters;
 
-    //Embaralha e pega apenas a quantidade de caracteres informada no parâmetro
     $password = substr(str_shuffle($characters), 0, $qtyCaraceters);
 
-    //Retorna a senha
     return $password;
 }
 
@@ -45,9 +37,7 @@
     $novasenha1 = md5($novasenha);
     $comando2 = "UPDATE usuarios SET senha = '$novasenha1' WHERE usuario='$usuario'";
     $resultado2 = mysqli_query($conexao, $comando2);
-    // echo $comando2;
 
-    // email para mostrar a senha
     require("/PHPMailer-master/src/PHPMailer.php");
     require("/PHPMailer-master/src/SMTP.php");
     require("/PHPMailer-master/src/Exception.php");
