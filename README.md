@@ -26,7 +26,7 @@ There are 3 types of users, I will resume the main functionalities about each on
 * PHP Session
 * PHP Mailer
 * mPDF
-* Ajax GoogleAPIs (for Google Maps)
+* Ajax GoogleAPIs 
 
 # Observation
 The site is not responsive, so please zoom in or out for a better layout and experience.
@@ -62,7 +62,7 @@ The site is not responsive, so please zoom in or out for a better layout and exp
 * **User:** ```bruna```
 * **Password:** ```12345678```
 
-#### Manger
+#### Manager
 * **User:** ```adm```
 * **Password:** ```12345678```
 
