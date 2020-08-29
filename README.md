@@ -69,19 +69,19 @@ The site is not responsive, so please zoom in or out for a better layout and exp
 
 # Prints
 
-![print1](/img/prints/mugs.jpg)
+![print1](/img/prints/mugs.png)
 
-![print2](/img/prints/login.jpg)
+![print2](/img/prints/login.png)
 
-![print3](/img/prints/registerClient.jpg)
+![print3](/img/prints/registerClient.png)
 
-![print4](/img/prints/budget.jpg)
+![print4](/img/prints/budget.png)
 
-![print5](/img/prints/workOrder.jpg)
+![print5](/img/prints/workOrder.png)
 
-![print6](/img/prints/workOrderStatus.jpg)
+![print6](/img/prints/workOrderStatus.png)
 
-![print7](/img/prints/pdf.jpg)
+![print7](/img/prints/pdf.png)
 
 
 # License
