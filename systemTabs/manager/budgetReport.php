@@ -114,7 +114,7 @@ function calculaValorTotal($codigo, $conexao){
 				</div>
 
 				<button type="submit" id = "botaoFiltrar" >
-				 	Filtar
+				 	Filtrar
 				</button>
 				
 

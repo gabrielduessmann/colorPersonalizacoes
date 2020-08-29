@@ -139,7 +139,7 @@ function ocultaLocalizacao(){
 function retornaProdutos(cont) {
 	var campo = "#categorias"+cont;
 	var codigoCategoria = document.getElementById("categorias"+cont).value;
-	var pagina = "retornaProdutos.php";
+	var pagina = "returnProducts.php";
 	
 
 		$.ajax({
@@ -160,7 +160,7 @@ function retornaProdutos(cont) {
 
 function retornaValorUnitario(cont) {
 	var idProduto = document.getElementById("produtos"+cont).value;
-	var pagina = "retornaValorUnitario.php";
+	var pagina = "returnUnitaryValue.php";
 	$.ajax({
 		type: 'POST',
 		dataType: 'html',

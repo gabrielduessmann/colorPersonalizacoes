@@ -182,9 +182,9 @@ function validaUsuario(editar, id){
 		var usuario = document.getElementById('usuario').value;
 		var pagina = "";
 		if (editar=="editar") {
-			var pagina = "validaUsuario1.php";
+			var pagina = "validateUser.php";
 		}else {
-			var pagina = "validaUsuario.php";
+			var pagina = "validateUser.php";
 		}
 		$.ajax({
 			type: 'POST',

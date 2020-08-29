@@ -24,7 +24,7 @@
 
 <body>
 
-	<?php include("managerManuLayout.php")?>
+	<?php include("managerMenuLayout.php")?>
 
 	<main id="conteudo">
 

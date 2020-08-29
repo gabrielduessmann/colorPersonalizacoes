@@ -30,11 +30,6 @@
   <?php
   function calculaValorTotal($codigo, $conexao){
 
-  
-
-
-
-
   	$sql="SELECT SUM(orcamentos_has_produtos.quantidade*orcamentos_has_produtos.precoatual) as valorTotal 
 			 FROM ordensservicos INNER JOIN orcamentos_has_produtos ON ordensservicos.orcamentos_codigo=orcamentos_has_produtos.orcamentos_codigo WHERE ordensservicos.codigo=".$codigo;
 
@@ -45,12 +40,7 @@
   }
   ?>
 
-
-
   <?php include("managerMenuLayout.php");  ?>
-
-
-
 
 	<main id="conteudo">
 
@@ -88,8 +78,6 @@
               <?php
             }
             ?>
-
-
 
         </select>
 
@@ -136,8 +124,6 @@
 
 				</div>
 
-
-
 				<div id="direita">
 
 
@@ -155,7 +141,7 @@
 				
 
 				<button type="submit" id = "botaoFiltrar">
-          Filtar
+          Filtrar
 				</button>
 				
 

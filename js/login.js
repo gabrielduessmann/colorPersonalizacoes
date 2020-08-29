@@ -31,7 +31,7 @@ if (senha == "" || senha.length<8) {
 
 function validaUsuario(){
 		var usuario = document.getElementById('usuario').value;
-		var pagina = "validaUsuario.php";
+		var pagina = "validateUser.php";
 		$.ajax({
 			type: 'POST',
 			dataType: 'html',
@@ -57,6 +57,6 @@ function botaoEsqueci(){
 		alert("É necessário inserir um usuário cadastrado para dar acesso à essa página.");
 		document.getElementById('linkEsqueciSenha').href="#";
 	}else {
-		document.getElementById('linkEsqueciSenha').href="esqueciminhasenha.php";
+		document.getElementById('linkEsqueciSenha').href="forgotMyPassword.php";
 	}
 }
