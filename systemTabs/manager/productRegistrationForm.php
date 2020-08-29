@@ -53,7 +53,7 @@
              <?php
                require_once("../dbConnection.php");
                $comando="SELECT codigo, nome FROM categorias";
-               // echo $comando;
+               
                  $resultado=mysqli_query($conexao,$comando);
 
                  $categorias=array();
@@ -79,8 +79,7 @@
 
 
 					<button type = "submit" id="botaoCadastrar" class="botao">
-            <!-- <img src = "../../img/registrar.png" alt="botão para rgistrar produto"> 
-             -->Cadastrar
+            Cadastrar
           </button>
             
       </div>
@@ -190,10 +189,8 @@
 
 	</main>
 
-
 </body>
 </html>
-
 
 
 <?php

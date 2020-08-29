@@ -25,21 +25,6 @@
   $senha = md5($senha);
   $grauPermissao = $_POST['permissao'];
 
-  // echo $nome."<br>";
-  // echo $email."<br>";
-  // echo $cpf."<br>";
-  // echo $telefone."<br>";
-  // echo $celular."<br>";
-  // echo $rua."<br>";
-  // echo $numero."<br>";
-  // echo $cep."<br>";
-  // echo $cidade."<br>";
-  // echo $bairro."<br>";
-  // echo $estado."<br>";
-  // echo $usuario."<br>";
-  // echo $senha."<br>";
-  // echo $grauPermissao."<br>";
-
   $comando = "";
 
   if ($celular == "") {
@@ -47,15 +32,13 @@
     $comando = "INSERT INTO usuarios (usuario, senha, cpf, nome, graupermissao, fone1, email, cep, rua, numero, cidade, bairro, estado)
     VALUES ('".$usuario."', '".$senha."', ".$cpf.", '".$nome."', ".$grauPermissao.", ".$telefone.", '".$email."',
     ".$cep.", '".$rua."', ".$numero.", '".$cidade."', '".$bairro."', '".$estado."')";
-    // echo $comando;
-
+    
   }else {
 
     $comando = "INSERT INTO usuarios (usuario, senha, cpf, nome, graupermissao, fone1, fone2, email, cep, rua, numero, cidade, bairro, estado)
     VALUES ('".$usuario."', '".$senha."', ".$cpf.", '".$nome."', ".$grauPermissao.", ".$telefone.", ".$celular.", '".$email."',
     ".$cep.", '".$rua."', ".$numero.", '".$cidade."', '".$bairro."', '".$estado."')";
-    // echo $comando;
-
+   
   }
 
   $resultado = mysqli_query($conexao, $comando);

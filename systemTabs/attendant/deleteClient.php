@@ -13,13 +13,9 @@ session_start();
 	$idCliente = $_POST['id'];
 	
 	$comando1 = "SELECT id FROM clientes WHERE clientes.id NOT IN (SELECT clientes_id FROM orcamentos) AND id=".$idCliente;	// se retornar alguma linha � o que n�o tem liga��o com o or�amento
-//	echo $comando1;
-
 	$resultado = mysqli_query($conexao, $comando1);
 
 	$linhas = mysqli_num_rows($resultado);
-
-//	echo $linhas;
 
 	if($linhas == 0){	
 		header("Location:clientRegistrationForm.php?retorno=1");	

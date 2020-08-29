@@ -8,13 +8,12 @@
 
 
     $codigoOrdemServico = $_POST['codigoOrdemServico'];
-    // echo $codigoOrdemServico;
+    
 
     require_once("../dbConnection.php");
 
     $comando = "UPDATE ordensservicos SET status=2, usuarios_id=".$_SESSION['idLogado']." WHERE codigo=".$codigoOrdemServico;
-    // echo $comando;
-
+    
     $resultado = mysqli_query($conexao, $comando);
     
     if ($resultado==true) {

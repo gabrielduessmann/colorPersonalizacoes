@@ -11,7 +11,6 @@
 
 	require_once("../dbConnection.php");
 	
-// Pegando dados do banco
 	$idCliente = $_POST['idCliente'];	
 	$nome = $_POST['nome'];
 	$cpf = $_POST['cpf'];
@@ -28,16 +27,10 @@
 	$rua = $_POST['rua'];
 	$numero = $_POST['numero'];
 
-/*		echo "Id:".$idCliente."<br>"."Nome: ".$nome."<br>"."Cpf: ".$cpf."<br>"."Cnpj: ".$cnpj."<br>"."Inscricao Estadual: ".$inscricaoEstadual."<br>".
-		 "Fone: ".$fone1."<br>"."Fone2: ".$fone2."<br>"."Email: ".$email."<br>"."CEP: ".$cep."<br>"."Estado: ".$estado."<br>".
-		 "Cidade: ".$cidade."<br>"."Bairro: ".$bairro."<br>"."Rua: ".$rua."<br>"."Número: ".$numero;
-*/
-
-// Tirar caracteres especiais desses dados (como . e -)
-	$cpf = preg_replace("/\D+/", "", $cpf); // remove qualquer caracter não numérico do cpf
-	$fone1 = preg_replace("/\D+/", "", $fone1); // remove qualquer caracter não numérico do fone1
-	$fone2 = preg_replace("/\D+/", "", $fone2); // remove qualquer caracter não numérico do fone2
-	$cep = preg_replace("/\D+/", "", $cep); // remove qualquer caracter não numérico do cep
+	$cpf = preg_replace("/\D+/", "", $cpf); 
+	$fone1 = preg_replace("/\D+/", "", $fone1); 
+	$fone2 = preg_replace("/\D+/", "", $fone2); 
+	$cep = preg_replace("/\D+/", "", $cep); 
 
 	if(($cnpj == "") && ($inscricaoEstadual == "")){
 		$comando = "UPDATE clientes SET nome = '".$nome."', cpf = '".$cpf."', fone1 = '".$fone1."',
@@ -54,7 +47,6 @@
 	rua = '".$rua."', numero = '".$numero."' WHERE id=".$idCliente;
 	}
 	
-//	echo $comando;
 
 	$resultado = mysqli_query($conexao, $comando);
 	

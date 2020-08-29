@@ -34,7 +34,6 @@ function calculaValorTotal($codigo, $conexao){
 	$resultado = mysqli_fetch_assoc($resultado);
 	$desconto = $resultado['desconto'];
 	$desconto = intval($desconto);
-	// var_dump($desconto);
 
 	if ($desconto == "undefined" || $desconto == "" || $desconto == 0) {
 		$desconto = 1;
@@ -42,18 +41,16 @@ function calculaValorTotal($codigo, $conexao){
 		$desconto = intval($desconto);
 		$desconto = 1-($desconto/100);
 	}
-	// echo $desconto;
 	$sql="SELECT SUM(orcamentos_has_produtos.quantidade*orcamentos_has_produtos.precoatual) 
 	as valorTotal 
 	FROM orcamentos INNER JOIN orcamentos_has_produtos ON 
 	orcamentos.codigo=orcamentos_has_produtos.orcamentos_codigo WHERE orcamentos.codigo=".$codigo;
-	// echo $sql;
+	
 	$resultadoValor=mysqli_query($conexao,$sql);
 	$valorTotal=mysqli_fetch_assoc($resultadoValor);
 
 	$valorTotal = number_format(($valorTotal['valorTotal']*$desconto), 2, ',', '');
 
-	// return $valorTotal['valorTotal']*$desconto;
 	return $valorTotal;
 }
 
@@ -99,7 +96,6 @@ function calculaValorTotal($codigo, $conexao){
 					ON clientes.id=orcamentos.clientes_id 
 					WHERE status=1
 					GROUP BY orcamentos.codigo";
-						// echo $comando;
             $resultado = mysqli_query($conexao, $comando);
 			$linhas = mysqli_num_rows($resultado);
 			
@@ -271,9 +267,7 @@ function calculaValorTotal($codigo, $conexao){
 				GROUP BY 
 					orcamentos.codigo
 					";
-		}
-				// echo $comando;
-				
+		}				
 				$resultado = mysqli_query($conexao, $comando);
 				$linhas = mysqli_num_rows($resultado);
 
@@ -319,9 +313,7 @@ function calculaValorTotal($codigo, $conexao){
 				$dataEntregaBrasileira = $cadaOrdem['dataentrega'];
 				$dataEntregaBrasileira = date('d/m/Y', strtotime($dataEntregaBrasileira));
 
-				
 				$status = $cadaOrdem['status'];
-				// echo $status;
 
 				switch ($status) {
 					case 1:
@@ -334,7 +326,6 @@ function calculaValorTotal($codigo, $conexao){
 						$status = "Feito";
 						break;
 				}
-				// echo $status;
 				
 	?>
 		<tbody>

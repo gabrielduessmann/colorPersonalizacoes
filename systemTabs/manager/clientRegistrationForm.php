@@ -57,12 +57,12 @@
 		var cnpj= document.getElementById("cnpj");
 		var inscricaoEstadual = document.getElementById("inscricaoEstadual");
 		
-			if(cpf.value != ""){ // cpf preenchido
+			if(cpf.value != ""){ 
 				cnpj.disabled=true;
 				inscricaoEstadual.disabled=true;
-			} else if(cnpj.value != ""){ // cnpj preenchido
+			} else if(cnpj.value != ""){ /
 				cpf.disabled=true;
-			} else if(inscricaoEstadual.value != ""){	// inscricao estadual preenchido 
+			} else if(inscricaoEstadual.value != ""){	
 				cpf.disabled=true;
 			} else if(cpf.value == ""){ 
 				cpf.disabled=false;
@@ -70,11 +70,10 @@
 				inscricaoEstadual.disabled=false;
 			}
 	
-		} //fecha function
+		} 
 
 </script>
 
-<!-- -->	
 		
 				<label for = "cpf" class = "palavras"> CPF </label>
 					<input type = "text" name = "cpf" id = "cpf"   onblur = "liberar();" class = "campoTexto" placeholder = "Insira seu CPF aqui"> 
@@ -89,11 +88,7 @@
 					<input maxlength = "19" onblur = "liberar();" type = "text" name = "inscricaoEstadual" id = "inscricaoEstadual" class = "campoTexto" placeholder = "Insira sua Inscrição Estadual aqui">
 				<br>	
 				<br>
-				
-				
-<!-- -->			
-				
-				
+							
 				<label for = "fone1" class = "palavras"> Telefone * </label>
 					<input type = "text" name = "fone1" id = "fone1" class = "campoTexto" placeholder = "Insira seu telefone aqui">
 				<br>
@@ -203,7 +198,6 @@
 						<th class = "outrosCampos"> Ações </th>
 					</tr>
 
-<!-- consulta -->
 					
 	<?php
 		
@@ -217,7 +211,6 @@
 			$buscaCliente = $_GET['nomeCliente'];
 			$comando = "SELECT * FROM clientes WHERE nome LIKE '".$buscaCliente."%'";
 		}
-		//	echo $comando;
 		
 		$resultado = mysqli_query($conexao, $comando);
 		
@@ -232,7 +225,7 @@
 		</tr>
 	
 	<?php
-			} // fechamento if linha 176
+			}
 			else{
 				$clientesRetornados = array();
 				
@@ -242,7 +235,6 @@
 			
 				foreach($clientesRetornados as $cadaCliente){
 	?>
-<!-- resultado das buscas -->
 
 		<tr>
 			<td  class = "outrasClasses"> <?php echo $cadaCliente['nome']; ?> </td>
@@ -279,8 +271,8 @@
 		</tr>
 	
 	<?php
-				} // fechamento foreach linha 193
-			} // fechamento else linha 186
+				} 
+			}
 	?>
 
 	<?php
@@ -292,8 +284,7 @@
 		}	
 	}
 	?>
-
-<!-- fim consulta -->					
+					
 		</table>
 		
 		</fieldset>

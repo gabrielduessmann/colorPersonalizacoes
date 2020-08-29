@@ -17,9 +17,6 @@ function validarCampos(){
 	var aviso = "";
 	var verificaFocus = false;
 	
-/*	alert(inscEstadual);
-	alert(cnpj);
-	alert(cpf);*/
 	
 	if((cpf == "") && (cnpj == "")){
 		aviso += "CNPJ ou CPF \n";

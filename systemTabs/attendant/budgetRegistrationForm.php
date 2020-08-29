@@ -395,9 +395,7 @@ function calculaValorTotal($codigo, $conexao){
 			orcamentos.codigo";
 		
 		
-	}
-
-	// echo $comando;	
+	}	
 	$resultado = mysqli_query($conexao, $comando);
 	$linhas = mysqli_num_rows($resultado);
 	if ($linhas == 0) {
@@ -419,7 +417,7 @@ function calculaValorTotal($codigo, $conexao){
 		$valorAtual = $cadaOrca['precoatual'];
 		$desconto = $cadaOrca['desconto'];
 			$valorTotal .= calculaValorTotal($cadaOrca['codigo'], $conexao);
-			$valorTotal = $valorTotal*(1-$desconto/100); // dando desconto ao valor total
+			$valorTotal = $valorTotal*(1-$desconto/100); l
 			$valorTotal = sprintf("%.2f", $valorTotal);
 			
 			$dataEmissaoBrasileira = $cadaOrca['dataemissao'];
@@ -487,8 +485,7 @@ function calculaValorTotal($codigo, $conexao){
 			clientes_id = clientes.id
 		WHERE
 			orcamentos.codigo =".$cadaOrca['codigo'];
-		// echo $comando3."<br>";
-		$resultado = mysqli_query($conexao, $comando3); // mandando p banco
+		$resultado = mysqli_query($conexao, $comando3); 
 			
 		$orcamentos2Linha = array();
 		while($cadaOrca2 = mysqli_fetch_assoc($resultado)){
@@ -521,13 +518,10 @@ function calculaValorTotal($codigo, $conexao){
 		$html = "";
 		
 			
-		} // fechamento foreach
+		} 
 		
 	} 
 		
-	
-//	echo $comando2;		
-
 ?>
 		</table>
 		

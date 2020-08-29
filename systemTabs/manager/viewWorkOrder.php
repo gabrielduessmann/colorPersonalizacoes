@@ -120,14 +120,14 @@
 		<br>
 
 	<?php
-    if ($orcamento['cep'] == NULL) { // entregar no local do cliente
+    if ($orcamento['cep'] == NULL) { 
     ?>
         <input type="radio" name="pontoDeEntrega" id="radio1" onclick="ocultaLocalizacao()" checked value="1">
 	    <label for="radio1">Entregar no local do cliente</label><br>
 	    <input type="radio" name="pontoDeEntrega" id="radio2" onclick="mostraLocalizacao()" value="2">
 	    <label for="radio2">Entregar em outro local</label>
     <?php
-    } else { // entregar em outro local
+    } else { 
     ?>
         <input type="radio" name="pontoDeEntrega" id="radio1" onclick="ocultaLocalizacao()" value="1">
 	    <label for="radio1">Entregar no local do cliente</label><br>

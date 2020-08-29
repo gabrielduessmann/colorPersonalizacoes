@@ -9,8 +9,7 @@ session_start();
 
 	require_once("../dbConnection.php");
 	
-	
-// Pegando dados do banco
+
 	$nome = $_POST['nome'];
 	$cpf = $_POST['cpf'];
 	$cnpj = $_POST['cnpj'];
@@ -35,19 +34,12 @@ session_start();
 	$numero = $_POST['numero'];
 	
 	
-// Tirar caracteres especiais desses dados (como . e -)
-	$cpf = preg_replace("/\D+/", "", $cpf); // remove qualquer caracter não numérico do cpf
-	$cnpj = preg_replace("/\D+/", "", $cnpj); // remove qualquer caracter não numérico do cnpj
-	$fone1 = preg_replace("/\D+/", "", $fone1); // remove qualquer caracter não numérico do fone1
-	$fone2 = preg_replace("/\D+/", "", $fone2); // remove qualquer caracter não numérico do fone2
-	$cep = preg_replace("/\D+/", "", $cep); // remove qualquer caracter não numérico do cep
+	$cpf = preg_replace("/\D+/", "", $cpf); 
+	$cnpj = preg_replace("/\D+/", "", $cnpj); 
+	$fone1 = preg_replace("/\D+/", "", $fone1);
+	$fone2 = preg_replace("/\D+/", "", $fone2); 
+	$cep = preg_replace("/\D+/", "", $cep); 
 
-
-/*	echo "Nome: ".$nome."<br>"."Cpf: ".$cpf."<br>"."Cnpj: ".$cnpj."<br>"."Inscricao Estadual: ".$inscricaoEstadual."<br>".
-		 "Fone: ".$fone1."<br>"."Fone2: ".$fone2."<br>"."Email: ".$email."<br>"."CEP: ".$cep."<br>"."Estado: ".$estado."<br>".
-		 "Cidade: ".$cidade."<br>"."Bairro: ".$bairro."<br>"."Rua: ".$rua."<br>"."Número: ".$numero;
-*/
-	// cpf, cnpj, insc est, celular, email podem ir como null
 
 
 	if($cpf==""){
@@ -83,12 +75,11 @@ session_start();
 	}
 	
 
-	else{	// caso tudo for preenchido
+	else{	
 	$comando = "INSERT INTO clientes VALUES(NULL, '".$nome."', '".$cpf."', '".$cnpj."', '".$fone1."', '".$fone2."', 
 				'".$inscricaoEstadual."', '".$estado."', '".$cidade."', '".$cep."', '".$email."', '".$numero."', '".$bairro."', '".$rua."')";
 	}
 	
-//	echo $comando;
 
 	$resultado = mysqli_query($conexao, $comando);
 

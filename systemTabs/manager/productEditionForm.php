@@ -28,8 +28,6 @@
 	<?php include("managerMenuLayout.php");?>
 
 
-
-
 	<main id="conteudo">
 
 		<form action="editProduct.php" method="POST" id="formRegistroProduto" onsubmit="return validarCampos()">
@@ -46,13 +44,12 @@
         <?php
           require_once("../dbConnection.php");
           $idProduto=$_POST['idProduto'];
-// echo $idProduto;
+
           $comando="SELECT * FROM produtos WHERE codigo=".$idProduto;
           $resultado= mysqli_query($conexao,$comando);
           $produto = mysqli_fetch_assoc($resultado);
 
-          // echo $produto['codigo'];
-          // echo $produto['nomeProduto'];
+      
          ?>
 
          <form action="editProduct.php" method="POST">
@@ -77,11 +74,10 @@ $cadaCategoria="";
 
 
 
-
               <?php
                 require_once("../dbConnection.php");
                 $comando="SELECT codigo, nome FROM categorias";
-                // echo $comando;
+            
                   $resultado=mysqli_query($conexao,$comando);
 
                   $categorias=array();

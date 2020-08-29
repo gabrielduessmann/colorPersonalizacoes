@@ -42,10 +42,8 @@ session_start();
 			require_once("../dbConnection.php");
 			
 			$idCliente = $_POST['id'];
-		//	echo $idCliente;
 		
 			$comando = "SELECT * FROM clientes WHERE id=".$idCliente;
-		//	echo $comando;
 		
 			$resultado = mysqli_query($conexao, $comando);
 			$cliente = mysqli_fetch_assoc($resultado);

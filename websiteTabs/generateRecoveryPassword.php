@@ -65,11 +65,10 @@
    $mail->SMTPAuth = true;
    $mail->IsHTML(true);
 
-   //Authentication
    $mail->Username = "colorpersonalizacoes.sa@gmail.com";
    $mail->Password = "eugostodeabacate";
-
-   //Set Params
+  //FIXME - Change password to current one
+   
    $mail->SetFrom("colorpersonalizacoes.sa@gmail.com");
    $mail->AddAddress($email);
    $mail->Subject = "Recuperação de Senha";

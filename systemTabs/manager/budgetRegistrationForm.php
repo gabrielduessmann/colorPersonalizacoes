@@ -521,12 +521,10 @@ function calculaValorTotal($codigo, $conexao){
 		$html = "";
 		
 			
-		} // fechamento foreach
+		} 
 		
 	} 
 		
-	
-//	echo $comando2;		
 
 ?>
 		</table>

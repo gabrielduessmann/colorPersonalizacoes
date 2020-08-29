@@ -1,32 +1,16 @@
 function validarCampos(){
 
 	var cliente = document.getElementById("cliente").value;
-	// alert (cliente);
 	var parcelas = document.getElementById("parcelas").value;
-	// alert (parcelas);
 	var desconto = document.getElementById("desconto").value;
-	// alert (desconto);
 	var entrega = $("input[name='pontoDeEntrega']:checked").val();
-	//alert (entrega);
 	var cep = document.getElementById("cep").value;
-	// alert (cep);
 	var estado = document.getElementById("estado").value;
-	// alert (estado);
 	var cidade = document.getElementById("cidade").value;
-	// alert (cidade);
 	var bairro = document.getElementById("bairro").value;
-	// alert (bairro);
 	var rua = document.getElementById("rua").value;
-	// alert (rua);
 	var numero = document.getElementById("numero").value;	
-	// alert(numero);
 
-	// alert (linhas.length - 1);
-	
-	/*var categoria = document.getElementById("categoria").value;
-	var produto = document.getElementById("produto").value; 
-	var quantidade = document.getElementById("quantidade").value;
-	var descricao = document.getElementById("descricao").value;*/
 	
 	var aviso = "";
 	var verificaFocus = false;
@@ -102,7 +86,6 @@ function validarCampos(){
 	var linhas = tabela.getElementsByTagName("tr");
 	linhas = linhas.length;
 	linhas = linhas - 1;
-	// alert (linhas);
 
 	var produto;
 	for (var i=0; i<linhas;i++) {
@@ -156,7 +139,6 @@ function mostraLocalizacao(){
 
 function ocultaLocalizacao(){
 	document.getElementById("pontoDeEntrega").style.display='none';
-	// document.getElementById("pontoDeEntrega").reset();
 }
 
 function retornaProdutos(cont) {
@@ -204,10 +186,6 @@ function atualizaValorTotal(cont) {
 	var valorUnitarioProduto = document.getElementById("vlUnitario"+cont).value;
 	var qtde = document.getElementById("qtde"+cont).value;
 	var desconto = document.getElementById("desconto").value;
-	// alert (desconto);
-
-	/*alert(" Produto selecionado: "+produtoSelecionado+"\n Valor Ja adicionado: "+valorJaAdicionado+
-	"\n Valor total atual: "+valorTotalAtual+"\n Valor Unitario: "+valorUnitarioProduto+"\n Quantidade: "+qtde);*/
 	
 	valorTotalAtual = parseFloat(valorTotalAtual);
 	valorUnitarioProduto = parseFloat(valorUnitarioProduto);
@@ -218,7 +196,6 @@ function atualizaValorTotal(cont) {
 	
 	if ((produtoSelecionado!=0) && (valorJaAdicionado==null)) {
 		var valorAtualizado = (valorUnitarioProduto*qtde)+valorTotalAtual;
-		// alert (valorAtualizado);
 		$("#valorTotal").val(valorAtualizado);
 	} else if ((produtoSelecionado!=0) && (valorJaAdicionado!=null)) {
 		var valorAtualizado = (valorTotalAtual-valorJaAdicionado)+valorUnitarioProduto*qtde;
@@ -247,7 +224,6 @@ function descontoValorTotal() {
 				valorTotalAtual = valorTotalAtual + (vlUnitario*qtde);
 			}
 		}
-		// alert (valorTotalAtual);
 		if (desconto != 0 || desconto != "") {
 			valorTotalAtual = valorTotalAtual * (1-desconto/100);
 		}
@@ -321,7 +297,6 @@ function adicionaProduto() {
 	var linhasProdutos = tabelaProdutos.getElementsByTagName("tr");
 	linhasProdutos = linhasProdutos.length;
 	linhasProdutos = linhasProdutos - 1;
-	// alert (linhasProdutos);
 	var cont = linhasProdutos;
 
 	var categorias = $("#todasAsCategorias").val();	

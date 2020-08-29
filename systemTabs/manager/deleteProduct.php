@@ -10,7 +10,6 @@
  require_once("../dbConnection.php");
 
  $id = $_POST['idProduto'];
- //echo $id;
 
  $comando = "SELECT codigo FROM produtos WHERE codigo NOT IN (SELECT produtos_codigo FROM orcamentos_has_produtos) AND codigo=".$id;
  echo $comando;
@@ -19,9 +18,6 @@
   $linhas = mysqli_num_rows($resultado);
 
  
-
- //  echo $comando2;
-
  if($linhas == 0){
 	 header("Location: productRegistrationForm.php?retorno=1");
  }else{

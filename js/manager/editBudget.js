@@ -1,32 +1,15 @@
 function validarCampos(){
 
 	var cliente = document.getElementById("cliente").value;
-	// alert (cliente);
 	var parcelas = document.getElementById("parcelas").value;
-	// alert (parcelas);
 	var desconto = document.getElementById("desconto").value;
-	// alert (desconto);
 	var entrega = $("input[name='pontoDeEntrega']:checked").val();
-	//alert (entrega);
 	var cep = document.getElementById("cep").value;
-	// alert (cep);
 	var estado = document.getElementById("estado").value;
-	// alert (estado);
 	var cidade = document.getElementById("cidade").value;
-	// alert (cidade);
 	var bairro = document.getElementById("bairro").value;
-	// alert (bairro);
 	var rua = document.getElementById("rua").value;
-	// alert (rua);
 	var numero = document.getElementById("numero").value;	
-	// alert(numero);
-
-	// alert (linhas.length - 1);
-	
-	/*var categoria = document.getElementById("categoria").value;
-	var produto = document.getElementById("produto").value; 
-	var quantidade = document.getElementById("quantidade").value;
-	var descricao = document.getElementById("descricao").value;*/
 	
 	var aviso = "";
 	var verificaFocus = false;
@@ -196,25 +179,6 @@ var cont;
 var produtos = $("#todosOsProdutos").val();
 var valoresJaAdicionadosAoTotal = [];
 
-/*$(document).ready(function() {
-	var precosUnitarios = document.getElementsByName("valoresUnitarios[]");
-	// alert(precosUnitarios[0].value);
-	var quantidades = document.getElementsByName("qtdeProdutos[]");
-	// alert(quantidades[1].value);
-	var contJaAdicionado;
-
-	for (var i=0; i < precosUnitarios.length; i++) {	
-		contJaAdicionado = precosUnitarios[i].parentElement.id;
-		alert (precosUnitarios[i].parentElement.id);
-		alert(contJaAdicionado);
-		contJaAdicionado = contJaAdicionado.substring(3);
-		contJaAdicionado = parseInt(contJaAdicionado);
-		
-		valoresJaAdicionadosAoTotal[contJaAdicionado] = (parseFloat(precosUnitarios[i].value) * 
-		parseFloat(quantidades[i].value));
-	}
-});	*/
-
 function atualizaValorTotal(cont) {
 	var produtoSelecionado = $("#produtos"+cont).val()
 	var valorJaAdicionado = valoresJaAdicionadosAoTotal[cont];
@@ -222,10 +186,6 @@ function atualizaValorTotal(cont) {
 	var valorUnitarioProduto = document.getElementById("vlUnitario"+cont).value;
 	var qtde = document.getElementById("qtde"+cont).value;
 	var desconto = document.getElementById("desconto").value;
-	// alert (desconto);
-
-	/*alert(" Produto selecionado: "+produtoSelecionado+"\n Valor Ja adicionado: "+valorJaAdicionado+
-	"\n Valor total atual: "+valorTotalAtual+"\n Valor Unitario: "+valorUnitarioProduto+"\n Quantidade: "+qtde);*/
 	
 	valorTotalAtual = parseFloat(valorTotalAtual);
 	valorUnitarioProduto = parseFloat(valorUnitarioProduto);
@@ -236,7 +196,6 @@ function atualizaValorTotal(cont) {
 	
 		if ((produtoSelecionado!=0) && (valorJaAdicionado==null)) {
 			var valorAtualizado = (valorUnitarioProduto*qtde)+valorTotalAtual;
-			// alert (valorAtualizado);
 			$("#valorTotal").val(valorAtualizado);
 		} else if ((produtoSelecionado!=0) && (valorJaAdicionado!=null)) {
 			var valorAtualizado = (valorTotalAtual-valorJaAdicionado)+valorUnitarioProduto*qtde;
@@ -265,7 +224,6 @@ function descontoValorTotal() {
 				valorTotalAtual = valorTotalAtual + (vlUnitario*qtde);
 			}
 		}
-		// alert (valorTotalAtual);
 		if (desconto != 0 || desconto != "") {
 			valorTotalAtual = valorTotalAtual * (1-desconto/100);
 		}
@@ -317,7 +275,6 @@ function adicionaProduto() {
 	var linhas = tabela.getElementsByTagName("tr");
 	linhas = linhas.length;
 	linhas = linhas - 1;
-	// alert(linhas);
 
 	var categorias = $("#todasAsCategorias").val();	
 	var produtos = $("#todosOsProdutos").val();
@@ -371,10 +328,6 @@ function removeProduto(cont) {
 	var cont = cont;
 
 	if ((valorTotalAtualPedido != 0.00) && (produtoSelecionado!=0)) {
-		/*var valorUnitario = $("#vlUnitario"+cont).val();
-		var qtde = $("#qtde"+cont).val();
-		var valorReduzir = parseFloat(valorUnitario) * parseInt(qtde);
-		$("#valorTotal").val(valorTotalAtualPedido-valorReduzir);*/
 		$("#linha"+cont).remove();
 		descontoValorTotal();
 	} else {

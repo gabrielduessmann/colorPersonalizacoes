@@ -50,14 +50,10 @@
           require_once("../dbConnection.php");
 
           $idUsuario = $_POST['botaoEditar'];
-          // echo "ID:".$idUsuario;
+          
           $comando = "SELECT * FROM usuarios WHERE id=".$idUsuario;
           $resultado = mysqli_query($conexao, $comando);
           $usuario = mysqli_fetch_assoc($resultado);
-
-          // echo $usuario['nome']."<br>";
-          // echo $usuario['id']."<br>";
-          // echo $usuario['email']."<br>";
          ?>
 
 				<br>

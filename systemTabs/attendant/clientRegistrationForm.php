@@ -57,12 +57,12 @@ session_start();
 		var cnpj= document.getElementById("cnpj");
 		var inscricaoEstadual = document.getElementById("inscricaoEstadual");
 		
-			if(cpf.value != ""){ // cpf preenchido
+			if(cpf.value != ""){ 
 				cnpj.disabled=true;
 				inscricaoEstadual.disabled=true;
-			} else if(cnpj.value != ""){ // cnpj preenchido
+			} else if(cnpj.value != ""){ 
 				cpf.disabled=true;
-			} else if(inscricaoEstadual.value != ""){	// inscricao estadual preenchido 
+			} else if(inscricaoEstadual.value != ""){	
 				cpf.disabled=true;
 			} else if(cpf.value == ""){ 
 				cpf.disabled=false;
@@ -202,9 +202,7 @@ session_start();
 						<th class = "outrosCampos"> CPF/CNPJ </th>
 						<th class = "outrosCampos"> Ações </th>
 					</tr>
-
-<!-- consulta -->
-					
+				
 	<?php
 		
 		require_once("../dbConnection.php");
@@ -217,7 +215,6 @@ session_start();
 			$buscaCliente = $_GET['nomeCliente'];
 			$comando = "SELECT * FROM clientes WHERE nome LIKE '".$buscaCliente."%'";
 		}
-		//	echo $comando;
 		
 		$resultado = mysqli_query($conexao, $comando);
 		
@@ -232,7 +229,7 @@ session_start();
 		</tr>
 	
 	<?php
-			} // fechamento if linha 176
+			} 
 			else{
 				$clientesRetornados = array();
 				
@@ -242,7 +239,7 @@ session_start();
 			
 				foreach($clientesRetornados as $cadaCliente){
 	?>
-<!-- resultado das buscas -->
+
 
 		<tr>
 			<td  class = "outrasClasses"> <?php echo $cadaCliente['nome']; ?> </td>
@@ -250,11 +247,11 @@ session_start();
 		
 	<?php if($cadaCliente['cpf'] != ""){
 	?>
-			<td  class = "outrasClasses"> <?php echo $cadaCliente['cpf'] ; ?> </td> <!-- VER SE TEM CPF OU CNPJ -->
+			<td  class = "outrasClasses"> <?php echo $cadaCliente['cpf'] ; ?> </td> 
 	<?php
 	} else if($cadaCliente['cpf'] == ""){		
 	?>
-			<td class = "outrasClasses"> <?php echo $cadaCliente['cnpj'] ; ?> </td> <!-- VER SE TEM CPF OU CNPJ -->
+			<td class = "outrasClasses"> <?php echo $cadaCliente['cnpj'] ; ?> </td> 
 	<?php
 	}
 	?>		
@@ -279,8 +276,8 @@ session_start();
 		</tr>
 	
 	<?php
-				} // fechamento foreach linha 193
-			} // fechamento else linha 186
+				}
+			}
 	?>
 
 	<?php
@@ -292,8 +289,7 @@ session_start();
 		}	
 	}
 	?>
-
-<!-- fim consulta -->					
+					
 		</table>
 		
 		</fieldset>

@@ -33,7 +33,7 @@
 		require_once("../dbConnection.php");
 
 		$codigoCategoria = $_POST['codigoCategoria'];
-		// echo $codigoCategoria;
+		
 		$comando = "SELECT * FROM categorias WHERE codigo=".$codigoCategoria;
 		$resultado = mysqli_query($conexao, $comando);
 		$categoria = mysqli_fetch_assoc($resultado);

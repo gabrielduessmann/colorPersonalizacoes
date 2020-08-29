@@ -28,11 +28,9 @@ session_start();
 	
 <?php
 
-	// calcula valor total da ordem de serviço
 
 function calculaValorTotal($codigo, $conexao){
 
-	//verificar se teve desconto no orçamento
 	$comando = "SELECT desconto FROM orcamentos WHERE codigo=".$codigo;
 	$resultado = mysqli_query($conexao, $comando);
 	$resultado = mysqli_fetch_assoc($resultado);
@@ -47,25 +45,20 @@ function calculaValorTotal($codigo, $conexao){
 		$desconto = 1-($desconto/100);
 	}
 	
-
-// multiplica o preco atual pela quantidade do produto e faz a soma de todos os preços daquele orçamento
-	
 	$sql="SELECT SUM(orcamentos_has_produtos.quantidade*orcamentos_has_produtos.precoatual) 
 	as valorTotal 
 	FROM orcamentos INNER JOIN orcamentos_has_produtos ON 
 	orcamentos.codigo=orcamentos_has_produtos.orcamentos_codigo WHERE orcamentos.codigo=".$codigo;
-	// echo $sql;
+	
 	$resultadoValor=mysqli_query($conexao,$sql);
 	$valorTotal=mysqli_fetch_assoc($resultadoValor);
-	return $valorTotal['valorTotal']*$desconto; // retonar o valor total com o desconto
+	return $valorTotal['valorTotal']*$desconto; 
 }
 
 ?>
 	
 	<?php include("attendantMenuLayout.php") ?>
 	<br>
-
-	<!-- Mostra todas as ordens de serviço -->
 
 	<h1 id = "tituloPag">Ordem de Serviço </h1>
 	
@@ -236,8 +229,7 @@ foreach ($ordensServicos as $cadaOrdem) {
 	
 	$status = $cadaOrdem['status'];
 
-	switch ($status) { // Captura o número do código do banco e transforma em string pro 
-					   // usuário saber em qual status está
+	switch ($status) { 
 		case 1:
 			$status = "Aberto";
 			break;

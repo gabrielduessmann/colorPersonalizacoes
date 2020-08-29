@@ -36,11 +36,10 @@
  $mail->SMTPAuth = true;
  $mail->IsHTML(true);
 
- //Authentication
  $mail->Username = "colorpersonalizacoes.sa@gmail.com";
  $mail->Password = "eugostodeabacate";
+ //FIXME - Change password to the correct one
 
- //Set Params
  $mail->SetFrom($email);
  $mail->AddAddress("colorpersonalizacoes.sa@gmail.com");
  $mail->Subject = $motivo;

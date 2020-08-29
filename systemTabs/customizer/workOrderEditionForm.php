@@ -6,7 +6,6 @@
 
 		if (isset($_SESSION['idLogado']) && $_SESSION['nivelLogado']==2) {
 
-
 ?>
 
 <!DOCTYPE html>
@@ -156,11 +155,6 @@
 
 		</table>
 	</div>
-
-
-
-	<!-- -------------------------------------------------------------------- -->
-
 
 
 	<div id="fazendo">

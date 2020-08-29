@@ -238,7 +238,6 @@
        </tr>
 
       <?php
-        }//fechamento if
         else{
           $usuariosRetornados = array();
 
@@ -286,8 +285,8 @@
       </tr>
 
       <?php
-    }//fechamento foreach
-  }//fechamento else
+    }
+  }
        ?>
 
      </table>

@@ -26,8 +26,6 @@
   $senhaMD5 = md5($senha);
   $grauPermissao = $_POST['permissao'];
 
-  // echo $nome.$id;
-  // echo $nome.$email.$cpf;
 
   if ($celular == "" && $senha!="") {
     $comando = "UPDATE usuarios SET nome='".$nome."', email='".$email."', cpf=".$cpf.", fone1=".$telefone.",
@@ -50,7 +48,6 @@
     senha='".$senhaMD5."', graupermissao=".$grauPermissao." WHERE id=".$id;
   }
 
-  // echo $comando;
   $resultado = mysqli_query($conexao, $comando);
 
   if ($resultado==true) {

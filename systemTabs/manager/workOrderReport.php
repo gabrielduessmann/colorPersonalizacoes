@@ -24,7 +24,6 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../../css/manager/workOrderReport.css">
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
-  <!-- <script src="../../js/manager/reportWorKOrder.js"></script> -->
 </head>
 
 <body>
@@ -38,7 +37,7 @@
 
   	$sql="SELECT SUM(orcamentos_has_produtos.quantidade*orcamentos_has_produtos.precoatual) as valorTotal 
 			 FROM ordensservicos INNER JOIN orcamentos_has_produtos ON ordensservicos.orcamentos_codigo=orcamentos_has_produtos.orcamentos_codigo WHERE ordensservicos.codigo=".$codigo;
-//	echo $sql;
+
   	$resultadoValor=mysqli_query($conexao,$sql);
   	$valorTotal=mysqli_fetch_assoc($resultadoValor);
     return $valorTotal['valorTotal'];
@@ -185,18 +184,14 @@
           <?php
             if((isset($_GET['dataInicial'])==true) && (isset($_GET['dataFinal'])==true) &&
             (isset($_GET['cliente'])==true) && (isset($_GET['funcionario'])==true) && (isset($_GET['status'])==true)){
-              // echo "foi";
+        
               $dataInicial=$_GET['dataInicial'];
               $dataFinal=$_GET["dataFinal"];
               $cliente=$_GET["cliente"];
               $funcionario=$_GET["funcionario"];
               $status=$_GET["status"];
-
-// echo $dataInicial;
-               $dataAtual=date('Y/m/d');
+              $dataAtual=date('Y/m/d');
               $dataMinima='1000/01/01';
-// echo $dataAtual;
- // echo $cliente;
 
               if($dataInicial=="" && $dataFinal=="" && $cliente==0 && $funcionario==0 && $status==0){
                 $comando="
@@ -225,7 +220,6 @@
             ON
               ordensservicos.orcamentos_codigo=orcamentos.codigo GROUP BY ordensservicos.codigo ";
 
-          //     echo $comando;
 
               }else if($dataInicial!="" && $dataFinal!="" && $cliente!=0 && $funcionario!=0 && $status!=0){
 
@@ -255,7 +249,7 @@
                 ON
                   ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '$dataInicial' AND '$dataFinal' AND orcamentos.clientes_id='".$cliente."' AND orcamentos.usuarios_id=$funcionario AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                    // echo $comando;
+                  
               }else if($dataInicial=="" && $dataFinal=="" && $cliente!=0 && $funcionario==0 && $status==0){
                 $comando="
                 SELECT
@@ -283,7 +277,7 @@
               ON
               ordensservicos.orcamentos_codigo=orcamentos.codigo
               WHERE orcamentos.clientes_id='".$cliente."' GROUP BY ordensservicos.codigo";
-                //  echo $comando;
+               
               }else if($dataInicial=="" && $dataFinal=="" && $cliente==0 && $funcionario==0 && $status!=0){
                 $comando="
                 SELECT
@@ -311,7 +305,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                  // echo $comando;
+                  
 
              }else if($dataInicial=="" && $dataFinal=="" && $cliente==0 && $funcionario!=0 && $status==0){
                 $comando="
@@ -340,7 +334,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE orcamentos.usuarios_id='".$funcionario."' GROUP BY ordensservicos.codigo ";
-                //  echo $comando;
+                
               }else if($dataInicial=="" && $dataFinal!="" && $cliente==0 && $funcionario==0 && $status==0){
                 $comando="
                 SELECT
@@ -368,7 +362,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataMinima."' AND '".$dataFinal."'  GROUP BY ordensservicos.codigo";
-                  // echo $comando;
+                  
                  
               }else if($dataInicial!="" && $dataFinal=="" && $cliente==0 && $funcionario==0 && $status==0){
                 $comando="
@@ -397,11 +391,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataAtual."' GROUP BY ordensservicos.codigo ";
-                      // echo $comando; AQUIIIIIII
-                      // echo $dataInicial;
-                      // $dataemissao = ['dataemissao'];
-                      // parse_str = $dataemissao
-                      // print $dataemissao;
+                   
               }else if($dataInicial=="" && $dataFinal=="" && $cliente!=0 && $funcionario!=0 && $status==0){
                 $comando="
                 SELECT
@@ -429,7 +419,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE orcamentos.clientes_id='".$cliente."' AND orcamentos.usuarios_id='".$funcionario."' GROUP BY ordensservicos.codigo";
-                    // echo $comando;
+                 
               }else if($dataInicial=="" && $dataFinal=="" && $cliente!=0 && $funcionario==0 && $status!=0){
                 $comando="
                 SELECT
@@ -457,7 +447,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE orcamentos.clientes_id='".$cliente."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                    //  echo $comando;
+                    
               }else if($dataInicial!="" && $dataFinal=="" && $cliente!=0 && $funcionario==0 && $status==0){
                 $comando="
                 SELECT
@@ -485,7 +475,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataAtual."' AND orcamentos.clientes_id='".$cliente."' GROUP BY ordensservicos.codigo";
-                      // echo $comando;
+                 
               }else if($dataInicial=="" && $dataFinal!="" && $cliente!=0 && $funcionario==0 && $status==0){
                 $comando="
                 SELECT
@@ -513,7 +503,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataMinima."' AND '".$dataAtual."' AND orcamentos.clientes_id='".$cliente."' GROUP BY ordensservicos.codigo";
-                      //  echo $comando;
+                    
               }else if($dataInicial=="" && $dataFinal=="" && $cliente==0 && $funcionario!=0 && $status!=0){
                 $comando="
                 SELECT
@@ -541,7 +531,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE  orcamentos.usuarios_id='".$funcionario."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                        // echo $comando;
+                        
               }else if($dataInicial!="" && $dataFinal=="" && $cliente==0 && $funcionario!=0 && $status==0){
                 $comando="
                 SELECT
@@ -569,7 +559,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataAtual."' AND orcamentos.usuarios_id='".$funcionario."' GROUP BY ordensservicos.codigo";
-                        //  echo $comando;
+                        
               }else if($dataInicial=="" && $dataFinal!="" && $cliente==0 && $funcionario!=0 && $status==0){
                 $comando="
                 SELECT
@@ -597,7 +587,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataMinima."' AND '".$dataFinal."' AND orcamentos.usuarios_id='".$funcionario."' GROUP BY ordensservicos.codigo";
-                          // echo $comando;
+                       
               }else if($dataInicial!="" && $dataFinal=="" && $cliente==0 && $funcionario==0 && $status!=0){
                 $comando="
                 SELECT
@@ -625,7 +615,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataAtual."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                          //  echo $comando;
+                      
               }else if($dataInicial=="" && $dataFinal!="" && $cliente==0 && $funcionario==0 && $status!=0){
                 $comando="
                 SELECT
@@ -653,7 +643,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataAtual."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                            // echo $comando;
+                          
               }else if($dataInicial!="" && $dataFinal!="" && $cliente==0 && $funcionario==0 && $status==0){
                 $comando="
                 SELECT
@@ -681,7 +671,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataFinal."' GROUP BY ordensservicos.codigo";
-                            //  echo $comando;
+                          
               }else if($dataInicial=="" && $dataFinal=="" && $cliente!=0 && $funcionario!=0 && $status!=0){
                 $comando="
                 SELECT
@@ -709,7 +699,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE orcamentos.clientes_id='".$cliente."' AND orcamentos.usuarios_id='".$funcionario."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                              // echo $comando;
+                           
               }else if($dataInicial!="" && $dataFinal!="" && $cliente!=0 && $funcionario==0 && $status==0){
                 $comando="
                 SELECT
@@ -737,7 +727,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataFinal."' AND orcamentos.clientes_id='".$cliente."' GROUP BY ordensservicos.codigo";
-                              //  echo $comando;
+                           
               }else if($dataInicial!="" && $dataFinal=="" && $cliente==0 && $funcionario!=0 && $status!=0){
                 $comando="
                 SELECT
@@ -765,7 +755,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataAtual."' AND orcamentos.usuarios_id='".$funcionario."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                              //  echo $comando;
+                           
               }else if($dataInicial=="" && $dataFinal!="" && $cliente==0 && $funcionario!=0 && $status!=0){
                 $comando="
                 SELECT
@@ -793,7 +783,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataMinima."' AND '".$dataFinal."' AND orcamentos.usuarios_id='".$funcionario."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                              // echo $comando;
+                            
               }else if($dataInicial!="" && $dataFinal!="" && $cliente==0 && $funcionario!=0 && $status==0){
                 $comando="
                 SELECT
@@ -821,7 +811,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataFinal."' AND orcamentos.usuarios_id='".$funcionario."' GROUP BY ordensservicos.codigo";
-                              //  echo $comando;
+                             
               }else if($dataInicial!="" && $dataFinal!="" && $cliente==0 && $funcionario==0 && $status!=0){
                 $comando="
                 SELECT
@@ -849,7 +839,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataFinal."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                                // echo $comando;
+                              
               }else if($dataInicial!="" && $dataFinal=="" && $cliente!=0 && $funcionario==0 && $status!=0){
                 $comando="
                 SELECT
@@ -877,7 +867,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataAtual."' AND ordensservicos.status='".$status."' AND orcamentos.clientes_id='".$cliente."' GROUP BY ordensservicos.codigo";
-                                //  echo $comando;
+                                
                 }else if($dataInicial!="" && $dataFinal=="" && $cliente==0 && $funcionario!=0 && $status!=0){
                 $comando="
                 SELECT
@@ -905,7 +895,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataAtual."' AND orcamentos.usuarios_id='".$funcionario."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                // echo $comando;
+                
 
               }else if($dataInicial=="" && $dataFinal!="" && $cliente!=0 && $funcionario==0 && $status!=0){
                 $comando="
@@ -934,7 +924,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataMinima."' AND '".$dataFinal."' AND orcamentos.clientes_id='".$cliente."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                //  echo $comando;
+               
               }else if($dataInicial=="" && $dataFinal!="" && $cliente==0 && $funcionario!=0 && $status!=0){
                 $comando="
                 SELECT
@@ -962,7 +952,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataMinima."' AND '".$dataFinal."' AND orcamentos.usuarios_id='".$funcionario."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                // echo $comando;
+                
 
               }else if($dataInicial!="" && $dataFinal=="" && $cliente!=0 && $funcionario!=0 && $status!=0){
                 $comando="
@@ -991,7 +981,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataAtual."' AND orcamentos.clientes_id='".$cliente."' AND orcamentos.usuarios_id='".$funcionario."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                //  echo $comando;
+               
               }else if($dataInicial!="" && $dataFinal!="" && $cliente==0 && $funcionario!=0 && $status!=0){
                 $comando="
                 SELECT
@@ -1019,7 +1009,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataFinal."' AND orcamentos.usuarios_id='".$funcionario."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                  // echo $comando;
+                  
               }else if($dataInicial!="" && $dataFinal!="" && $cliente!=0 && $funcionario==0 && $status!=0){
                 $comando="
                 SELECT
@@ -1047,7 +1037,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataFinal."' AND orcamentos.clientes_id='".$cliente."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
-                  //  echo $comando;
+                  
               }else if($dataInicial!="" && $dataFinal!="" && $cliente!=0 && $funcionario!=0 && $status==0){
                 $comando="
                 SELECT
@@ -1075,7 +1065,7 @@
                 ON
                 ordensservicos.orcamentos_codigo=orcamentos.codigo
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataInicial."' AND '".$dataFinal."' AND orcamentos.clientes_id='".$cliente."' AND orcamentos.usuarios_id='".$funcionario."' GROUP BY ordensservicos.codigo";
-                    // echo $comando;
+                    
               }else if($dataInicial=="" && $dataFinal!="" && $cliente!=0 && $funcionario!=0 && $status!=0){
                 $comando="
                 SELECT
@@ -1105,7 +1095,7 @@
                 WHERE ordensservicos.dataemissao BETWEEN '".$dataMinima."' AND '".$dataFinal."' AND orcamentos.clientes_id='".$cliente."' AND orcamentos.usuarios_id='".$funcionario."' AND ordensservicos.status='".$status."' GROUP BY ordensservicos.codigo";
                     
             }
-            //  echo $comando;
+            
             $resultado = mysqli_query($conexao, $comando);
 
           	$linhas = mysqli_num_rows($resultado);
@@ -1116,7 +1106,7 @@
           		<tr> <td colspan = "7"> Nenhuma ordem de serviço encontrada</td> </tr>
 
           	<?php
-          	} // fechamento if linha 355 ($linhas)
+          	} 
           	else {
           		$ordens = array();
           		while($cadaOrdem = mysqli_fetch_assoc($resultado)){
@@ -1150,8 +1140,6 @@
 				foreach($customizadores as $cadaCust){
 				 $funcionario = $cadaCust['nome'];
 				}
-	//		echo $comando5;
-
 		
 				$desconto = $cadaOrdem['desconto'];
 			    $valorTotal .= calculaValorTotal($cadaOrdem['codigoOrdemServico'], $conexao);
@@ -1212,8 +1200,8 @@
 					orcamentos_has_produtos.orcamentos_codigo = ordensservicos.orcamentos_codigo
           		WHERE
           			ordensservicos.codigo =".$cadaOrdem['codigoOrdemServico'];
-          		// echo $comando3;
-          		$resultado = mysqli_query($conexao, $comando3); // mandando p banco
+          		
+          		$resultado = mysqli_query($conexao, $comando3); 
 
           		$ordens2Linha = array();
           		while($cadaOrdem2 = mysqli_fetch_assoc($resultado)){
@@ -1260,7 +1248,7 @@
 
                     }
 
-          		} // fechamento foreach linha 367
+          		} 
 
           		$valorTeste = $cadaOrdem['codigoOrdemServico'];
           		$html2 .= $html;
@@ -1269,10 +1257,10 @@
 
           			$html = "";
 
-          		} // fechamento foreach linha 466
+          		} 
 
-            } // fechamento else linha 361
-            // echo $comando5;
+            } 
+            
           	?>
 
           		</table>

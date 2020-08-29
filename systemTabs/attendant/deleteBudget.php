@@ -12,7 +12,6 @@
     $codigo = $_POST['codigoOrcamento'];
 
     $comando = "SELECT codigo FROM ordensservicos WHERE orcamentos_codigo=".$codigo;
-    // echo $comando;
     $resultado = mysqli_query($conexao, $comando);
     $linhas = mysqli_num_rows($resultado);
     if ($linhas==0) {

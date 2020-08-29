@@ -58,13 +58,8 @@ function validarConsulta(){
 	
 }
 
-
-
-// registraOrdemServicoForm.php
-
 function validarCamposOrdemServico() {
 	var dataEntrega = document.getElementById("campoDataEntrega").value;
-	// alert (dataEntrega);
 
 	if (dataEntrega == "") {
 		alert ("Preencha corretamente a data de entrega.");

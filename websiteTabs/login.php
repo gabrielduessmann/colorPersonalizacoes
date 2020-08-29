@@ -31,12 +31,9 @@
 		</div>
 
 		<button type="reset" class="botoes" id="botao">
-			<!-- <img src="../img/limpar.png" alt="botaoLimpar"> -->
 		</button>
 
 		<button type="submit"  id="botaoEntrar">
-			<!-- <img src="../img/enviar.png" alt="botaoEnviar">
-			 -->
 			Entrar
 		</button>
 

@@ -12,7 +12,6 @@
     $codigoCategoria = $_POST['codigoCategoria'];
     $nome = $_POST['categoria'];
     $descricao = $_POST['descricao'];
-    //  echo $codigoCategoria."   ".$nome."   ".$descricao;
 
     $comando = "UPDATE categorias SET nome='".$nome."', descricao='".$descricao."' WHERE 
                 codigo=".$codigoCategoria;

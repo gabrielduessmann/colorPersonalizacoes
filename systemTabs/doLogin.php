@@ -8,12 +8,10 @@ $senha = $_POST['senha'];
 
 $senha=md5($senha);
 
-// echo $usuario."    ".$senha;
-
 $comando = "SELECT * FROM usuarios WHERE
 usuario='".$usuario."' AND senha='".$senha."'";
 
-// echo $comando;
+
 $resultado=mysqli_query($conexao, $comando);
 $user = mysqli_fetch_assoc($resultado);
 $linhas=mysqli_num_rows($resultado);

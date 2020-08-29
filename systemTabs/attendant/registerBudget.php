@@ -10,9 +10,8 @@
     require_once("../dbConnection.php");
 
     $cliente = $_POST['cliente'];
-    // $dataEmissao = $cliente.date('Y-m-d');
     $parcelas = $_POST['parcelas'];
-    $parcelas = preg_replace("/\D+/", "", $parcelas); // remove qualquer caracter não numérico das parcelas
+    $parcelas = preg_replace("/\D+/", "", $parcelas); 
     $desconto = $_POST['desconto'];
     $entrega = $_POST['pontoDeEntrega'];
 
@@ -25,22 +24,19 @@
     
     if ($entrega==2) {
         $cep = $_POST['cep'];
-        $cep = preg_replace("/\D+/", "", $cep); // remove qualquer caracter não numérico do cep
+        $cep = preg_replace("/\D+/", "", $cep); 
         $estado = $_POST['estado'];
         $cidade = $_POST['cidade'];
         $bairro = $_POST['bairro'];
         $rua = $_POST['rua'];
         $numero = $_POST['numero'];
-        // echo $cep."<br>".$estado."<br>".$cidade."<br>".$bairro."<br>".$rua."<br>".$numero."<br><br>";
         $comando = "INSERT INTO orcamentos VALUES (NULL,'".date('Y-m-d')."',".$parcelas.",".$desconto.",
         '".$cidade."',".$cep.",'".$estado."','".$rua."',".$numero.",'".$bairro."',
         ".$_SESSION['idLogado'].",".$cliente.",1)";
     } else {
-    // echo $cliente."<br>".$dataEmissao."<br>".$parcelas."<br>".$desconto."<br>".$cidade;
         $comando = "INSERT INTO orcamentos VALUES (NULL,'".date('Y-m-d')."',".$parcelas.",".$desconto.",
         NULL,NULL,NULL,NULL,NULL,NULL,".$_SESSION['idLogado'].",".$cliente.",1)";
     }
-    // echo $comando;
 
     $resultado = mysqli_query($conexao, $comando);
 
@@ -64,10 +60,7 @@
     for ($i=0; $i < sizeof($produtos); $i++) {
         $comando3 = "INSERT INTO orcamentos_has_produtos VALUES (".$codigoOrcamento['codigoOrcamento'].",
         ".$produtos[$i].",".$qtdes[$i].",".$vlUnitarios[$i].",'".$descs[$i]."')";
-        // echo $comando3;
-        // echo $produtos[$i];
         $resultado3 = mysqli_query($conexao, $comando3);
-        // echo sizeof($produtos);
     }
 
     if ($resultado3==true) {

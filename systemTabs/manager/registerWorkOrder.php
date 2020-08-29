@@ -23,12 +23,10 @@
 
     $comando = "INSERT INTO ordensservicos VALUES (NULL, ".$status.", '".date('Y-m-d')."', '".$dataEntrega."', ".$codigoOrcamento.",
     ".$customizador.")";
-    // echo $comando;
-    
+        
     $resultado = mysqli_query($conexao, $comando);
 
     $comando2 = "UPDATE orcamentos SET status=3 WHERE codigo=".$codigoOrcamento;
-    // echo $comando2;
     $resultado2 = mysqli_query($conexao, $comando2);
 
     if($resultado == true && $resultado2 == true){

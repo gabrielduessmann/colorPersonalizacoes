@@ -31,7 +31,6 @@ if (senha == "" || senha.length<8) {
 
 function validaUsuario(){
 		var usuario = document.getElementById('usuario').value;
-		// alert(usuario);
 		var pagina = "validaUsuario.php";
 		$.ajax({
 			type: 'POST',
@@ -45,7 +44,6 @@ function validaUsuario(){
 					alert("O usuário não existe no sistema!");
 					document.getElementById('usuario').value="";
 				}
-				// alert(usuario);
 			}
 		});
 
@@ -55,7 +53,6 @@ function validaUsuario(){
 
 function botaoEsqueci(){
 	var usuario = document.getElementById('usuario').value;
-	// alert(usuario);
 	if (usuario=="") {
 		alert("É necessário inserir um usuário cadastrado para dar acesso à essa página.");
 		document.getElementById('linkEsqueciSenha').href="#";

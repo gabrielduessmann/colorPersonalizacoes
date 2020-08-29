@@ -71,7 +71,6 @@ function calculaValorTotal($codigo, $conexao){
 								GROUP BY
 									id";
 
-				//	echo $comando;
 					$resultado=mysqli_query($conexao,$comando);
 
 					$clientes=array();
@@ -84,7 +83,7 @@ function calculaValorTotal($codigo, $conexao){
 				?>
 					<option value = "<?=$cadaCli['id']; ?>"> <?=$cadaCli['nome'];?> </option>
 				<?php
-					} // fecha foreach
+					} 
 				?>
 					</select>
 
@@ -115,8 +114,7 @@ function calculaValorTotal($codigo, $conexao){
 				</div>
 
 				<button type="submit" id = "botaoFiltrar" >
-					<!-- <img   src="../../img/filtrar.png" alt="botão filtrar">
-				 -->Filtar
+				 	Filtar
 				</button>
 				
 
@@ -489,7 +487,6 @@ function calculaValorTotal($codigo, $conexao){
 	WHERE
 			dataemissao BETWEEN '".$dataInicial."' AND '".$dataFinal."' GROUP BY orcamentos.codigo";
 	}
-// echo $comando2;
 	$resultado = mysqli_query($conexao, $comando2);
 
 	$linhas = mysqli_num_rows($resultado);
@@ -500,7 +497,7 @@ function calculaValorTotal($codigo, $conexao){
 		<tr> <td colspan = "7"> Nenhum orçamento encontrado </td> </tr>
 
 	<?php
-	} // fechamento if linha 355 ($linhas)
+	} 
 	else {
 		$orcamentos = array();
 		while($cadaOrca = mysqli_fetch_assoc($resultado)){
@@ -567,8 +564,8 @@ function calculaValorTotal($codigo, $conexao){
 			clientes_id = clientes.id
 		WHERE
 			orcamentos.codigo =".$cadaOrca['codigo'];
-//		echo $comando3;
-		$resultado = mysqli_query($conexao, $comando3); // mandando p banco
+
+		$resultado = mysqli_query($conexao, $comando3); 
 
 		$orcamentos2Linha = array();
 		while($cadaOrca2 = mysqli_fetch_assoc($resultado)){
@@ -603,7 +600,7 @@ function calculaValorTotal($codigo, $conexao){
 		";
 
 
-		} // fechamento foreach linha 367
+		} 
 
 		$valorTeste = $cadaOrca['codigo'];
 		$html2 .= $html;
@@ -612,11 +609,11 @@ function calculaValorTotal($codigo, $conexao){
 
 			$html = "";
 
-		} // fechamento foreach linha 466
+		} 
 
-	} // fechamento else linha 361
+	}
 
-	} // fechamento if linha 123
+	} 
 	?>
 
 		</table>
@@ -629,7 +626,6 @@ function calculaValorTotal($codigo, $conexao){
 			<form action = "generatePDF.php" method = "POST">
 			<input type = "hidden" name = "html" value = "<?=$html2;?>">
 			<button onclick =  type="submit" id="botaoPdf">
-				<!-- <img src="../../img/gerarPDF.png" alt="botao"> -->
 				Gerar PDF
 			</button>
 		</form>
@@ -642,7 +638,6 @@ function calculaValorTotal($codigo, $conexao){
 ?>
 
 		</fieldset>
-
 
 
 	</main>
