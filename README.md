@@ -69,7 +69,19 @@ The site is not responsive, so please zoom in or out for a better layout and exp
 
 # Prints
 
-![print](/img/caneca1.jpg)
+![print](/img/prints/mugs.jpg)
+
+![print](/img/prints/login.jpg)
+
+![print](/img/prints/registerClient.jpg)
+
+![print](/img/prints/budget.jpg)
+
+![print](/img/prints/workOrder.jpg)
+
+![print](/img/prints/workOrderStatus.jpg)
+
+![print](/img/prints/pdf.jpg)
 
 
 # License
