@@ -234,7 +234,7 @@ if ($orcamento['cep'] != NULL) {
 		<tr id=<?="linha".$cont;?>>
 			<td>
 			
-                <input id="<?="categorias".$cont;?>" class="categorias" value="Linha 225 (arrumar)" readonly>
+                <input id="<?="categorias".$cont;?>" class="categorias" value="" readonly>
 			</td>
 
 			<td>
