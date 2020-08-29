@@ -70,24 +70,31 @@ The site is not responsive, so please zoom in or out for a better layout and exp
 # Prints
 
 ![print1](/img/prints/mugs.png)
+
 **Access:** Anyone
 
 ![print2](/img/prints/login.png)
+
 **Access:** Anyone
 
 ![print3](/img/prints/registerClient.png)
+
 **Access:** Attendant and Manager
 
 ![print4](/img/prints/budget.png)
+
 **Access:** Attendant and Manager
 
 ![print5](/img/prints/workOrder.png)
+
 **Access:** Manager
 
 ![print6](/img/prints/workOrderStatus.png)
+
 **Access:** Customizer
 
 ![print7](/img/prints/pdf.png)
+
 **Access:** Manager
 
 
