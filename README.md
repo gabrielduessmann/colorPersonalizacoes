@@ -69,7 +69,7 @@ The site is not responsive, so please zoom in or out for a better layout and exp
 
 # Prints
 
-
+![print](/img/caneca1.jpg)
 
 
 # License
