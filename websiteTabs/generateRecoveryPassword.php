@@ -55,9 +55,8 @@
    $mail->SMTPAuth = true;
    $mail->IsHTML(true);
 
-   $mail->Username = "colorpersonalizacoes.sa@gmail.com";
-   $mail->Password = "eugostodeabacate";
-  //FIXME - Change password to current one
+   $mail->Username = "YOUR_EMAIL";
+   $mail->Password = "YOUR_PASSWORD";
    
    $mail->SetFrom("colorpersonalizacoes.sa@gmail.com");
    $mail->AddAddress($email);
