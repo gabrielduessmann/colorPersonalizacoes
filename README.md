@@ -29,7 +29,7 @@ There are 3 types of users, I will resume the main functionalities about each on
 * If not create the database automatically, create it manually with the name ```bd_colorpersonalizacoes```
 
 #### MySQL password
-* If have problems about MySQL password, change your MySQL password to:
+* If you have problems with MySQL password, change your MySQL password to:
 * **User:** ```root```
 * **Password:** ``` ``` (empty)
 
@@ -71,18 +71,18 @@ To access the system as employee, in the menu, click in **Login** and choose one
 
 
 # Project Structure
-The structure of the project is divided in two parts. The first is the comercial one, that anyone (especially the clients) can have access to it, they can see about the company and its contact, and the most imporant is that they can see products already maded. 
-For the employees there is the section login where they can login to the system.
+The structure of the site is divided in two parts. The first one is the comercial, that anyone (especially the clients) have access to it, they can see about the company and products customization made by it. 
+For the employees, there is the section login where they can login to the system.
 
-PHP was splitted in two files:
-* **websiteTabs:** PHP files for the part where it shows the products and all the clients have access to use and see.
+PHP was splitted in two folders:
+* **websiteTabs:** PHP files for the part where it shows the products customization and all the clients have access see it.
 
-* **systemTabs:** It contais all the tabs and the back-end application.
+* **systemTabs:** It contais all the pages and the back-end application of the system that only the employees have access.
 PHP files that contain ```Form``` in your name are responsible for HTML and to get data from database. Other PHP files are just for back-end.
 
 Ex: 
-* ```clientRegistrationForm.php``` it contains all HTML and also get all the clients registered in the database.
-* ```registerClient.php``` and ```deleteClient.php``` are just responsbible for PHP back-end application.
+* ```clientRegistrationForm.php``` it contains all HTML and get all the clients registered from the database.
+* ```registerClient.php``` and ```deleteClient.php``` are just responsible for PHP back-end application.
 
 
 # Observation
@@ -95,37 +95,37 @@ Below, it has some prints of the most used funcionalities in the site.
 
 
 ### Products made by the company
-**Anyone** (especially the clients) have access to this tab and they see the customized products maded by the company and get information about the company.
+**Anyone** (especially the clients) have access to this page and they see the customized products maded by the company and get information about it.
 
 ![print1](/img/prints/mugs.png)
 
 
 ### Login
-**Anyone** can have access this tab. However, only the employees who has a **user** can login into the system.
+**Anyone** can have access this page. However, only the **employees** who has a **user** can log into the system.
 
 ![print2](/img/prints/login.png)
 
 
 ### Client registration
-**Attendants** and **managers** can create new clients. Onlu registered clients can order a budget for a customization. In this page can be also consulted all the clients already registered. Moreover, they can be edited or deleted.
+**Attendants** and **managers** can create new clients. Only clients who are registered  can order a budget for a customization. In this page it shows all the clients already registered. Moreover, they can be edited or deleted.
 
 ![print3](/img/prints/registerClient.png)
 
 
 ### Budget
-**Attendants** and **managers** can make budgets for the clients. Here it contais all the details abou the product(s) customization and the total price for the client. After the budget is made, the **manager** has to approve or reject it. If rejected, it is deleted (logically in the database) and if approved, it become a work order.
+**Attendants** and **managers** can make budgets for the clients. Here it contais all the details about the product(s) that will be customized and the total price for the client. After the budget made, the **manager** has to approve or reject it. If rejected, it is deleted (logically in the database). If approved, it becomes a work order.
 
 ![print4](/img/prints/budget.png)
 
 
 ### Work order
-**Managers** makes a work order when they approve a budget. Then the work order will go to the customizers, who will be responsible for all the customization.
+**Managers** makes a work order when they approve a budget. Then the work order will go to the customizers, who will be responsible for all the customization. IN this page the **managers** can consult for the work orders.
 
 ![print5](/img/prints/workOrder.png)
 
 
 ### Work order status
-Thoughout the customization process, the **customizer** manages and swits the status of the work order. The status are: **To Do**, **Doing** and **Done**
+**Customizars**, thoughout the customization process, manages and swits the status of the work order. The status are: **To Do**, **Doing** and **Done**
 
 ![print6](/img/prints/workOrderStatus.png)
  
