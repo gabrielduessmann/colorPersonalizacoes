@@ -1,16 +1,16 @@
  # Objective
 
-This was a project for my technician in computering.  It was made by me and more 3 students.
-The main ideia was to develop a web site having simple CRUDs.
+This was a project for my technician in computing.  It was made by me and more 3 students.
+The main idea was to develop a website having simple CRUDs.
 
 # What is the website for
-The site is for the employees of a company rensponsible to customize itens (shirts, mugs, pens, etc) and manage all the customization process.
+The site is for the employees of a company responsible to customize items (shirts, mugs, pens, etc) and manage all the customization process.
 
 There are 3 types of users, I will resume the main functionalities about each one:
 
 * **Attendant:** Register new clients and make the customization budget.
 
-* **Customizer:** Responsible to make the customizations in the product. After the work order be approved, he/she can swit its status. The status are: **to do**, **doing** and **done**.
+* **Customizer:** Responsible to make the customizations in the product. After the work order be approved, he/she can swit its status. The status are: **To Do**, **Doing** and **Done**.
 
 * **Manager:** Register new itens to be customized, approve or deny budgets (if approved become a work order) and has access to reports.
  
@@ -110,7 +110,7 @@ Below, it has some prints of the most used funcionalities in the site.
 **Attendants** and **managers** can create new clients. Only clients who are registered  can order a budget for a customization. In this page it shows all the clients already registered. Moreover, they can be edited or deleted.
 
 ![print3](/img/prints/registerClient.png)
-
+    
 
 ### Budget
 **Attendants** and **managers** can make budgets for the clients. Here it contais all the details about the product(s) that will be customized and the total price for the client. After the budget made, the **manager** has to approve or reject it. If rejected, it is deleted (logically in the database). If approved, it becomes a work order.
@@ -119,19 +119,19 @@ Below, it has some prints of the most used funcionalities in the site.
 
 
 ### Work order
-**Managers** makes a work order when they approve a budget. Then the work order will go to the customizers, who will be responsible for all the customization. IN this page the **managers** can consult for the work orders.
+**Managers** makes a work order when they approve a budget. Then the work order will go to the customizers, who will be responsible for all the customization. In this page, the **managers** can also consult for the work orders.
 
 ![print5](/img/prints/workOrder.png)
 
 
 ### Work order status
-**Customizars**, thoughout the customization process, manages and swits the status of the work order. The status are: **To Do**, **Doing** and **Done**
+**Customizers**, throughout the customization process, manages and swits the status of the work order. 
 
 ![print6](/img/prints/workOrderStatus.png)
  
 
  ### Budget PDF
-**Managers** can generate PDFs of budgets or work orders. It contais the most valueable informations for his/her analyze.
+**Managers** can generate PDFs of budgets or work orders. It contains the most valuable informations for their analyze.
 
 ![print7](/img/prints/pdf.png)
 
