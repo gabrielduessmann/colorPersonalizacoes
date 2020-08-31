@@ -95,7 +95,7 @@ Below, it has some prints of the most used funcionalities in the site.
 
 
 ### Products made by the company
-**Anyone** (especially the clients) have access to this page and they see the customized products maded by the company and get information about it.
+**Anyone** (especially the clients) have access to this page and they see the customized products made by the company and get information about it.
 
 ![print1](/img/prints/mugs.png)
 
@@ -110,10 +110,10 @@ Below, it has some prints of the most used funcionalities in the site.
 **Attendants** and **managers** can create new clients. Only clients who are registered  can order a budget for a customization. In this page it shows all the clients already registered. Moreover, they can be edited or deleted.
 
 ![print3](/img/prints/registerClient.png)
-    
+
 
 ### Budget
-**Attendants** and **managers** can make budgets for the clients. Here it contais all the details about the product(s) that will be customized and the total price for the client. After the budget made, the **manager** has to approve or reject it. If rejected, it is deleted (logically in the database). If approved, it becomes a work order.
+**Attendants** and **managers** can make budgets for the clients. Here it contains all the details about the product(s) that will be customized and the total price for the client. After the budget made, the **manager** has to approve or reject it. If rejected, it is deleted (logically in the database). If approved, it becomes a work order.
 
 ![print4](/img/prints/budget.png)
 
