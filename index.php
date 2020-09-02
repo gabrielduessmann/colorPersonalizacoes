@@ -19,7 +19,7 @@
 				<li>More Products
 					<ul class="submenu">
 						<a href="websiteTabs/pens.php"><li>Pens</li></a>
-						<a href="websiteTabs/keychains.php"><li>keychains</li></a>
+						<a href="websiteTabs/keychains.php"><li>Keychains</li></a>
 					</ul>
 				</li>
 				<a href="websiteTabs/contact.php"><li>Contact</li></a>
