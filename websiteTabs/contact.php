@@ -19,7 +19,8 @@
 	<main id="conteudo">
 
 
-			<div id="divFormContatoEsquerda">
+	<div id="divFormContatoEsquerda">
+		
 		<h3 id="tituloMensagem">Deixe sua mensagem!</h3>
 
 			<form action="sendEmail.php" method="POST"  onsubmit="return validarCampos()" id="formContato">
@@ -29,6 +30,9 @@
 
 				<label class="campos" for="email">E-mail</label><br>
 				<input class="camposForm" type="text" name="email" id="email" placeholder="Digite seu e-mail aqui"><br>
+
+				<label class="campos">Telefone</label><br>
+				<input type="text" class="camposForm" placeholder="Digite seu telefone aqui" id="telefone" name="telefone"><br>
 
 				<label class="campos" for="mensagem">Motivo para o contato</label><br>
 				<select  id="motivoContato" name="motivo">
@@ -46,21 +50,22 @@
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 
-				<label class="campos">Telefone</label><br>
-				<input type="text" class="camposForm" placeholder="Digite seu telefone aqui" id="telefone" name="telefone"><br>
+				
 
 
 				<script type="text/javascript">$("#telefone").mask("(00) 00000-0000"); </script>
 
-				<button type="reset" class="botoes">
-					<img src="../img/limpar.png" alt="botao reset">
+				
+				<button type="reset"  id="botaoLimpar" class="botoes">
+					Limpar
 				</button>
-				<button type="submit" class="botoes">
-					<img src="../img/enviar.png" alt="enviar">
+				<button type="submit"  id="botaoEnviar" class="botoes">
+					Enviar
 				</button>
+			
 
 			</form>
-		</div>
+	</div>
 		<br>
 		<br>
 

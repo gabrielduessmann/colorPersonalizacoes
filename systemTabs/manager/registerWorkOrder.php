@@ -7,7 +7,7 @@
 
 
 
-    require_once("../dbCoonection.php");
+    require_once("../dbConnection.php");
     
 
     $codigoOrcamento = $_POST['codigoOrcamento'];

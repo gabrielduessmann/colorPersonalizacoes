@@ -134,7 +134,7 @@ function calculaValorTotal($codigo, $conexao){
               <td>R$ <?php echo $valorTotal;?></td>
               <td>
 
-      			<form action="workOrderRegistrationForm.php" method = "POST">
+      			<form action="acceptWorkOrder.php" method = "POST">
       					<input type = "hidden" name = "codigoOrcamento" value="<?php echo $cadaLinha['codigo'];?>">
       					<button type = "submit" id = "botaoOrdemServico" class="botoes"> 
 							  <img src = "../../img/correto.png" id = "imgOrdemServico" alt = "botão para fazer ordem de serviço"

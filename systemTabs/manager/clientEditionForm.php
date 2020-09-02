@@ -29,7 +29,7 @@
 
 <?php
 
-	include("managerMenyLayout.php");
+	include("managerMenuLayout.php");
 ?>
 <br>
 <h1 id = "tituloPag">Edição de Cliente </h1>

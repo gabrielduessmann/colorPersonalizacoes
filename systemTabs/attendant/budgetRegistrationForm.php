@@ -30,7 +30,7 @@
 
 function calculaValorTotal($codigo, $conexao){
 	
-	require_once("../dbConnetion.php");
+	require_once("../dbConnection.php");
 	
 	$sql="SELECT SUM(orcamentos_has_produtos.quantidade*orcamentos_has_produtos.precoatual) 
 	as valorTotal 
@@ -417,7 +417,7 @@ function calculaValorTotal($codigo, $conexao){
 		$valorAtual = $cadaOrca['precoatual'];
 		$desconto = $cadaOrca['desconto'];
 			$valorTotal .= calculaValorTotal($cadaOrca['codigo'], $conexao);
-			$valorTotal = $valorTotal*(1-$desconto/100); l
+			$valorTotal = $valorTotal*(1-$desconto/100); 
 			$valorTotal = sprintf("%.2f", $valorTotal);
 			
 			$dataEmissaoBrasileira = $cadaOrca['dataemissao'];

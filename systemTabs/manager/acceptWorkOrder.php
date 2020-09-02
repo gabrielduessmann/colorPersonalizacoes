@@ -1,10 +1,10 @@
 
 <?php
+  
 
+  session_start();
 
-session_start();
-
-	if (isset($_SESSION['idLogado']) && $_SESSION['nivelLogado']==2) {
+    if (isset($_SESSION['idLogado']) && $_SESSION['nivelLogado']==1) {
 
 
 ?>
@@ -21,12 +21,12 @@ session_start();
   <link rel="icon" href="../../img/icone.png" type="image/png" sizes="18x18">
   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-  <script src="../../js/manager/registerWorkOrder.js"></script>
+  <script src="../../js/diretor/registerWorkOrder.js"></script>
 </head>
 
 <body>
 
-	<?php include("customizerMenuLayout.php"); ?>	
+	<?php include("managerMenuLayout.php"); ?>	
 
 	<main id="conteudo">	
 			
@@ -38,7 +38,7 @@ session_start();
 	<legend class = "legend"> Orçamento </legend>
 				
 	
-	<form action="workOrderEditionForm.php" method="POST"  onsubmit="return validarCamposOrdemServico()">
+	<form action="registerWorkOrder.php" method="POST"  onsubmit="return validarCamposOrdemServico()">
 
 
 
@@ -46,14 +46,8 @@ session_start();
 
     require_once("../dbConnection.php");
 
-    $codigoOrdemServico= $_POST['codigoOrdemServico'];
-
-    $comando = "SELECT orcamentos_codigo FROM ordensservicos WHERE ordensservicos.codigo=".$codigoOrdemServico;
-    $resultado = mysqli_query($conexao, $comando);
-    $codigoOrcamento_codigo = mysqli_fetch_assoc($resultado);
-    $codigoOrcamento = $codigoOrcamento_codigo['orcamentos_codigo'];
+    $codigoOrcamento = $_POST['codigoOrcamento'];
     
-
     $comando = "SELECT cep FROM orcamentos WHERE codigo=".$codigoOrcamento;
     $resultado = mysqli_query($conexao, $comando);
     $endereco = mysqli_fetch_assoc($resultado);
@@ -126,14 +120,14 @@ session_start();
 		<br>
 
 	<?php
-    if ($orcamento['cep'] == NULL) {
+    if ($orcamento['cep'] == NULL) { // entregar no local do cliente
     ?>
         <input type="radio" name="pontoDeEntrega" id="radio1" onclick="ocultaLocalizacao()" checked value="1">
 	    <label for="radio1">Entregar no local do cliente</label><br>
 	    <input type="radio" name="pontoDeEntrega" id="radio2" onclick="mostraLocalizacao()" value="2">
 	    <label for="radio2">Entregar em outro local</label>
     <?php
-    } else { 
+    } else { // entregar em outro local
     ?>
         <input type="radio" name="pontoDeEntrega" id="radio1" onclick="ocultaLocalizacao()" value="1">
 	    <label for="radio1">Entregar no local do cliente</label><br>
@@ -296,15 +290,55 @@ if ($orcamento['cep'] != NULL) {
 
 		</table>
 
-       
+		
+		<label id="valorTotalLabel"> Valor Total </label>
+			<input type="number" name="valorTotal" id="valorTotal" value="<?=$valorTotal;?>" readonly><br>
+
+		<label class="valorCadaParcela" id="labelCadaParcela"> Valor Cada Parcela</label>
+			<input type="number" class="valorCadaParcela" name="valorCadaParcela" id="valorCadaParcela" value="<?=$valorParcelado;?>" 
+			readonly>
+        <br>
+        
+        <hr>
+
+    <div>
+        <label class="palavras" id="dataEntrega">Data de entrega *</label>
+            <input type="date" name="dataEntrega" id="campoDataEntrega" class="inputs">
+        <br>
+            
+
+        <label class="palavras" id="customizador">Customizador</label>
+           <select id="campoCustomizador" class="inputs" name="customizador">
+                <option value="0">Em aberto</option>
+                
+<?php
+
+        $comando = "SELECT id, nome FROM usuarios WHERE graupermissao=2";
+        $resultado = mysqli_query($conexao, $comando);
+
+        $customizador = array();
+        while ($cadaCustomizador = mysqli_fetch_assoc($resultado)) {
+            array_push($customizador, $cadaCustomizador);
+        }
+
+        foreach ($customizador as $cadaCustomizador) {
+?>
+
+                <option value="<?=$cadaCustomizador['id'];?>"><?=$cadaCustomizador['nome'];?></option>
+
+<?php
+        }
+
+?>        
         
            </select>
     </div>    
 
-			
-	<button type = "submit" id = "botaoVoltar"> 
-            Voltar
-    </button>
+		
+		<button type = "submit" id = "transformarOrdemServico"> 
+            <!-- <img src = "../../img/orcar.png" alt = "botão orçar">  -->
+            Transformar em Ordem de Serviço
+        </button>
 
 
 
@@ -322,7 +356,6 @@ if ($orcamento['cep'] != NULL) {
 
 
 <?php
-
   }else {
     header("Location: ../../websiteTabs/login.php");
   }
