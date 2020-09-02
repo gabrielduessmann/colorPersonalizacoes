@@ -1,5 +1,5 @@
 
-
+<script src="../js/menu.js"></script>
 <nav class="menu">
 	<ul>
 		<a href="../index.php"><li><img src="../img/icone.png" id="logo" alt="icone"></li></a>
@@ -11,7 +11,7 @@
 				<a href="keychains.php"><li>Keychains</li></a>
 			</ul>
 		</li>
-		<a href="contact.php"><li>Contact</li></a>
+		<a onclick="alertaManutencao()"><li>Contact</li></a>
 		<a href="login.php"><li>Login</li></a>
 
 		</ul>

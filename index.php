@@ -7,6 +7,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/index.css">
   <link rel="icon" href="img/icone.png" type="image/png" sizes="18x18">
+  <script src="js/menu.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,7 @@
 						<a href="websiteTabs/keychains.php"><li>Keychains</li></a>
 					</ul>
 				</li>
-				<a href="websiteTabs/contact.php"><li>Contact</li></a>
+				<a onclick="alertaManutencao()"><li>Contact</li></a>
 				<a href="websiteTabs/login.php"><li>Login</li></a>
 
 			</ul>
